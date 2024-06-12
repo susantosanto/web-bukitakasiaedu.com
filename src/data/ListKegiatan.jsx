@@ -3,12 +3,12 @@ import new4 from '../assets/news/4.png';
 export const ListKegiatan = [
     {
         id: 1,
-        date: '17 Februari 2024',
+        date: '29 Juli 2023',
         category: 'Kegiatan',
         location: 'Sekolah Dasar Alam Bukit Akasia',
         title: 'Pagelaran Jagad Alit "Sanusantara" dengan Tema : Pelestarian Kearifan Lokal Yang Inklusif',
-        shortDesc: 'Pada tanggal 17 Februari 2024, Sekolah Dasar Alam Bukit Akasia menggelar acara Pagelaran Jagad Alit bertajuk "Sanusantara" dengan tema "Pelestarian Kearifan Lokal yang Inklusif". Acara ini....',
-        longDesc: `Pada tanggal 17 Februari 2024, Sekolah Dasar Alam Bukit Akasia menggelar acara Pagelaran Jagad Alit bertajuk "Sanusantara" dengan tema "Pelestarian Kearifan Lokal yang Inklusif". Acara ini diadakan dengan tujuan untuk merayakan, melestarikan, dan mengajarkan kearifan lokal kepada generasi muda, sekaligus menanamkan nilai-nilai inklusivitas dan kebersamaan. Para siswa, guru, dan orang tua turut serta dalam memeriahkan acara yang penuh warna ini, yang berlangsung meriah di halaman sekolah.
+        shortDesc: 'Pada tanggal 29 Juli 2023, Sekolah Dasar Alam Bukit Akasia menggelar acara Pagelaran Jagad Alit bertajuk "Sanusantara" dengan tema "Pelestarian Kearifan Lokal yang Inklusif". Acara ini....',
+        longDesc: `Pada tanggal 29 Juli 2023, Sekolah Dasar Alam Bukit Akasia menggelar acara Pagelaran Jagad Alit bertajuk "Sanusantara" dengan tema "Pelestarian Kearifan Lokal yang Inklusif". Acara ini diadakan dengan tujuan untuk merayakan, melestarikan, dan mengajarkan kearifan lokal kepada generasi muda, sekaligus menanamkan nilai-nilai inklusivitas dan kebersamaan. Para siswa, guru, dan orang tua turut serta dalam memeriahkan acara yang penuh warna ini, yang berlangsung meriah di halaman sekolah.
 
         Pagelaran "Sanusantara" menampilkan berbagai macam pertunjukan seni dan budaya yang mencerminkan keragaman dan kekayaan budaya Nusantara. Para siswa menampilkan tarian tradisional, musik daerah, serta drama yang mengangkat cerita-cerita rakyat dari berbagai penjuru Indonesia. Kegiatan ini tidak hanya menjadi ajang unjuk bakat bagi para siswa, tetapi juga menjadi sarana untuk mengenalkan dan menanamkan rasa cinta terhadap budaya lokal sejak dini.
         

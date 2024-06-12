@@ -93,7 +93,7 @@ const FasilitasPage = () => {
 
             {/* Section Fasilitas */}
             <div className="w-full mx-auto mt-10 mb-10 relative overflow-hidden">
-                <div className="relative w-full h-screen ">
+                <div className="relative w-full h-80 md:h-screen flex items-center justify-center">
                     {fasilitasData.map((fasilitas, index) => (
                         <div
                             key={index}
@@ -105,30 +105,28 @@ const FasilitasPage = () => {
                                 alt={fasilitas.title}
                             />
                             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center p-6">
-                                <h2 className="text-4xl font-bold text-white mb-2">{fasilitas.title}</h2>
-                                <p className="text-lg text-white">{fasilitas.description}</p>
+                                <h2 className="text-xl md:text-4xl font-bold text-white mb-2 lg:pt-0 pt-12">{fasilitas.title}</h2>
+                                <p className="text-sm md:text-lg text-white">{fasilitas.description}</p>
                             </div>
                         </div>
                     ))}
                 </div>
                 <button
                     onClick={prevSlide}
-                    className="absolute top-1/2 left-0 transform -translate-y-1/2 p-2 rounded-full shadow-lg text-white text-xl transition"
+                    className="absolute top-1/2 left-2 md:left-4 transform -translate-y-1/2 p-2 md:p-3 text-white text-lg md:text-xl transition bg-primary rounded-full hover:bg-secondary"
                 >
-                    <FontAwesomeIcon icon={faArrowLeft} size="lg" />
+                    <FontAwesomeIcon icon={faArrowLeft} />
                 </button>
                 <button
                     onClick={nextSlide}
-                    className="absolute top-1/2 right-0 transform -translate-y-1/2 p-2 rounded-full shadow-lg text-white text-xl transition"
+                    className="absolute top-1/2 right-2 md:right-4 transform -translate-y-1/2 p-2 md:p-3 text-white text-lg md:text-xl transition bg-primary rounded-full hover:bg-secondary"
                 >
-                    <FontAwesomeIcon icon={faArrowRight} size="lg" />
+                    <FontAwesomeIcon icon={faArrowRight} />
                 </button>
             </div>
             {/* End Section Fasilitas */}
 
             <Footer />
-
-            
         </div>
     );
 };

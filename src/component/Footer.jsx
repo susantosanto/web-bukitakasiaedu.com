@@ -1,4 +1,3 @@
-// import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
@@ -6,10 +5,10 @@ import { faFacebook, faTwitter, faInstagram, faYoutube } from '@fortawesome/free
 const Footer = () => {
     return (
         <footer className="bg-[#003B32] text-slate-300 py-10">
-            <div className="container w-9/12 mx-auto px-4">
+            <div className="container w-11/12 md:w-9/12 mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div>
-                        <h5 className="text-3xl font-bold mb-5">SD Alam Bukit Akasia</h5>
+                        <h5 className="lg:text-3xl text-xl font-bold mb-5">SD Alam Bukit Akasia</h5>
                         <h5 className="text-lg font-bold mb-3">Contact Us</h5>
                         <p className="font-light mb-2 flex items-center">
                             <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
@@ -17,14 +16,14 @@ const Footer = () => {
                         </p>
                         <p className="font-light mb-2 flex items-center">
                             <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-                            Email: bukitakasiaoffice@gmail.com
+                            bukitakasiaoffice@gmail.com
                         </p>
                         <p className="font-light flex items-center">
                             <FontAwesomeIcon icon={faPhone} className="mr-2" />
-                            Phone: (+621) 821-2601-6965
+                            (+62) 821-2601-6965
                         </p>
                     </div>
-                    <div>
+                    <div className='hidden lg:block'>
                         <h5 className="text-lg font-bold mb-5">Quick Links</h5>
                         <ul className="space-y-2">
                             <li><a href="#" className="hover:text-gray-300">Tetang Kami</a></li>
@@ -34,10 +33,10 @@ const Footer = () => {
                             <li><a href="#" className="hover:text-gray-300">Kontak</a></li>
                         </ul>
                     </div>
-                    <div>
+                    <div className="hidden lg:block">
                         <h5 className="text-lg font-bold mb-5">Newsletter</h5>
                         <p className="font-light mb-4">Subscribe to our newsletter for the latest updates.</p>
-                        <form className="flex space-x-2">
+                        <form className="flex flex-col md:flex-row md:space-x-2 space-y-2 md:space-y-0">
                             <input
                                 type="email"
                                 placeholder="Your email"

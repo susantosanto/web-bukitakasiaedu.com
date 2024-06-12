@@ -89,16 +89,16 @@ const Hero = () => {
                     <div className='absolute inset-0 bg-black opacity-40'></div>
                 </div>
                 <div className='mx-auto absolute bottom-5 left-0 w-full text-white p-8'>
-                    <div className="w-10/12 container border-t border-slate-100 mx-auto flex flex-col justify-between space-x-10 md:flex-row items-center">
-                        <h1 className=' pt-5 text-4xl md:text-5xl lg:text-4xl font-bold mb-4 md:mb-0 md:mr-8'>
+                    <div className="w-11/12 mx-auto border-t py-2 border-slate-100 flex flex-col justify-between items-center space-y-5 md:flex-row md:space-y-0 md:space-x-10">
+                        <h1 className='text-center md:text-left text-2xl md:text-4xl lg:text-4xl font-bold'>
                             Temukan Bakatmu
                         </h1>
-                        <p className='text-sm pt-5 md:text-base lg:text-sm mb-4 md:mb-0 md:mr-8 ml-6 leading-relaxed'>
+                        <p className='text-center md:text-left text-sm md:text-base lg:text-md leading-relaxed'>
                             Di SD Alam Bukit Akasia, <br />
                             temukan bakat unikmu <br />
                             dan kembangkan bersama kami.
                         </p>
-                        <a href="#" onClick={scrollToTentang} className="flex items-center text-lg md:text-xl lg:text-xl font-semibold text-white py-2 px-10 hover:text-slate-200">
+                        <a href="#" onClick={scrollToTentang} className="flex items-center text-lg md:text-xl font-semibold text-white py-2 px-10 transform transition duration-500 hover:translate-x-5  hover:text-slate-200">
                             Selengkapnya <FontAwesomeIcon icon={faAngleRight} className="ml-3" />
                         </a>
                     </div>

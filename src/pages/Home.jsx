@@ -5,6 +5,7 @@ import BackToTop from "../component/BackToTop";
 import CallToAction from "../component/CallToAction";
 import News from "../component/News";
 import Comment from "../component/Comment";
+import LiveChat from "../component/LiveChat";
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
             <CallToAction />
             <Footer />
             <BackToTop />
+            <LiveChat />
         </div>
     );
 };

@@ -39,13 +39,13 @@ const DataTestimonials = [
         username: '@novia',
         image: empat,
         desc: 'Orang Tua dari M. Balya Rombel Bougainvillea dan Kanabi Rombel Chryshophyllum',
-        shortText: 'Memiliki anak² yg aktif seperti berjodoh ketika bertemu dengan SDA Bukit Akasia dengan konsep \'kapal pecah\' nya. Dan ketika melihat anak bersemangat berangkat sekolah hingga pulang dengan bahagia, sehingga baginya sekolah merupakan kegiatan yg menyenangkan, cukup ... ',
+        shortText: 'Memiliki anak² yg aktif seperti berjodoh ketika bertemu dengan SDA Bukit Akasia dengan konsep \'kapal pecah\' nya. Dan ketika melihat anak bersemangat berangkat sekolah hingga pulang dengan bahagia, sehingga ... ',
         longText: 'Memiliki anak² yg aktif seperti berjodoh ketika bertemu dengan SDA Bukit Akasia dengan konsep \'kapal pecah\' nya. Dan ketika melihat anak bersemangat berangkat sekolah hingga pulang dengan bahagia, sehingga baginya sekolah merupakan kegiatan yg menyenangkan, cukup membuat kami puas dengan sekolah ini begitupun konsep yg diterapkan. Maka ditahun berikutnya, anak kedua pun kami daftarkan disekolah ini.  Walaupun tergolong sekolah baru, tapi peminatnya luar biasa. Dan mudah²an kualitas pembelajaran nya pun tidak kalah bagus dengan sekolah² alam lainnya. Semoga SDA Bukit Akasia terus berkembang mencetak generasi terbaik di masa nya. Sepertinya siap² mendaftarkan anak ketiga juga nih. '
     },
     {
         id: 5,
         name: 'Bapak Suparwoto',
-        username: '@novia',
+        username: '@suparwoto',
         image: lima,
         desc: 'Orang Tua dari Askana Rombel Bambusa',
         shortText: 'Banyak para orangtua yang memperhitungkan jarak menuju ke SDA Bukit Akasia, namun bagi saya itu tidak menjadi penghalang, percayalah itu akan terbayar kan dengan semua yg ada di SD Alam Bukit Akasia, tempat sekolah yg nyaman asri jauh dari lalu lalang kendaraan polusi dan ...',

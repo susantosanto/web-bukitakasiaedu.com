@@ -1,4 +1,3 @@
-// import React from 'react';
 import NavbarSecondary from '../component/NavbarSecondary';
 import Footer from '../component/Footer';
 import bannerTentang from '../assets/tentang-page/hasilbelajar.webp';
@@ -15,11 +14,11 @@ const HubungiKamiPage = () => {
             <Header topBanner={bannerTentang} title='Hubungi Kami' />
 
             {/* Section Hubungi Kami */}
-            <div className="w-10/12 mx-auto mt-20 py-8 mb-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                    <div className="bg-white shadow-lg rounded-lg p-8">
-                        <h5 className="text-3xl font-bold mb-5 text-primary">SD Alam Bukit Akasia</h5>
-                        <h5 className="text-lg font-bold mb-3 text-primary">Contact Us</h5>
+            <div className="w-11/12 md:w-10/12 mx-auto mt-10 md:mt-20 py-8 mb-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="bg-white shadow-lg rounded-lg p-6 md:p-8">
+                        <h5 className="text-2xl md:text-3xl font-bold mb-5 text-primary">SD Alam Bukit Akasia</h5>
+                        <h5 className="text-lg md:text-xl font-bold mb-3 text-primary">Contact Us</h5>
                         <div className="space-y-4">
                             <p className="font-light flex items-center">
                                 <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-4 text-orange" />
@@ -35,9 +34,9 @@ const HubungiKamiPage = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="bg-white shadow-lg rounded-lg p-8 md:col-span-2 lg:col-span-1 flex flex-col justify-center items-center">
-                        <h5 className="text-3xl font-bold mb-5 text-primary text-center">Follow Us</h5>
-                        <div className="flex space-x-6">
+                    <div className="bg-white shadow-lg rounded-lg p-6 md:p-8 flex flex-col justify-center items-center">
+                        <h5 className="text-2xl md:text-3xl font-bold mb-5 text-primary text-center">Follow Us</h5>
+                        <div className="flex space-x-4 md:space-x-6">
                             <a href="mailto:info@example.com" className="text-primary hover:text-secondary transition-colors duration-200">
                                 <FontAwesomeIcon icon={faEnvelope} size="2x" />
                             </a>
