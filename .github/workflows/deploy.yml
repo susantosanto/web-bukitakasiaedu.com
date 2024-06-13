@@ -19,11 +19,12 @@ jobs:
     - name: Build project
       run: npm run build
 
+    - name: Install ftp-deploy
+      run: npm install -g ftp-deploy
+
     - name: Deploy to FTP
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
-      with:
-        ftp-server: ftp://153.92.11.88  # Ganti dengan FTP server kamu
-        ftp-username: ${{ secrets.FTP_USERNAME }}  # Ganti dengan username FTP kamu
-        ftp-password: ${{ secrets.FTP_PASSWORD }}  # Ganti dengan password FTP kamu
-        local-dir: ./dist  # Direktori hasil build
-        git-ftp-args: --insecure --syncroot /public_html/Project-coba  # Menambahkan opsi ini untuk menghindari error SSL dan menentukan direktori tujuan di server FTP
+      run: node deploy.js
+      env:
+        FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
