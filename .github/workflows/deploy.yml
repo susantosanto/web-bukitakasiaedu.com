@@ -26,4 +26,4 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install lftp -y
-          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD ftp.niagahoster.com; mirror -R build/ /path/to/deploy"
+          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD ftp.bukitakasia.com; mirror -R build/ /public_html/Public-coba"
