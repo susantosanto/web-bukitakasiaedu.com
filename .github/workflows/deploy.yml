@@ -26,4 +26,4 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install lftp -y
-          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD ftp://bukitakasiaedu.com; mirror -R build/ /public_html/Public-coba"
+          lftp -c "open -u $FTP_USERNAME,$FTP_PASSWORD ftp.bukitakasiaedu.com; mirror -R build/ /public_html/Public-coba"
