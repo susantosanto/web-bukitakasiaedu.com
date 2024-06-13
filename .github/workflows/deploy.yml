@@ -22,7 +22,8 @@ jobs:
     - name: Deploy to FTP
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        ftp-server: ftp://153.92.11.88/public_html/Project-coba  # Ganti dengan FTP server dan direktori tujuan kamu
-        ftp-username: u430508759  # Ganti dengan username FTP kamu
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./dist  # Ganti dengan direktori build proyek kamu
+        server: ftp://153.92.11.88  # Ganti dengan FTP server kamu
+        username: ${{ secrets.FTP_USERNAME }}  # Ganti dengan username FTP kamu
+        password: ${{ secrets.FTP_PASSWORD }}  # Ganti dengan password FTP kamu
+        local-dir: ./dist  # Direktori hasil build
+        git-ftp-args: --insecure --syncroot /public_html/Project-coba  # Menambahkan opsi ini untuk menghindari error SSL dan menentukan direktori tujuan di server FTP
