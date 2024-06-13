@@ -23,7 +23,7 @@ jobs:
       run: npm install -g ftp-deploy
 
     - name: Deploy to FTP
-      run: node deploy.js
+      run: node deploy.mjs
       env:
         FTP_SERVER: ${{ secrets.FTP_SERVER }}
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}

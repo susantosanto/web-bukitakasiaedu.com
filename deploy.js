@@ -1,4 +1,5 @@
-const FtpDeploy = require('ftp-deploy');
+import FtpDeploy from 'ftp-deploy';
+
 const ftpDeploy = new FtpDeploy();
 
 const config = {
@@ -6,7 +7,7 @@ const config = {
   password: process.env.FTP_PASSWORD,
   host: process.env.FTP_SERVER,
   port: 21,
-  localRoot: __dirname + '/dist',
+  localRoot: new URL('./dist', import.meta.url).pathname,
   remoteRoot: '/public_html/Project-coba/',
   include: ['*', '**/*'],
   deleteRemote: false,
