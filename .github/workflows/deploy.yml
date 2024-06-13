@@ -3,7 +3,7 @@ name: Deploy to Niagahoster FTP
 on:
   push:
     branches:
-      - master  # Ganti dengan branch yang sesuai
+      - main  # Ganti dengan branch yang sesuai
 
 jobs:
   deploy:
@@ -18,6 +18,12 @@ jobs:
 
     - name: Build project
       run: npm run build
+
+    - name: Clear GitHub Actions cache
+      run: |
+        git rm -r --cached .
+        git reset --hard
+
 
     - name: Deploy to FTP
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
