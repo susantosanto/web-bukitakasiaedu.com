@@ -10,27 +10,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
 
-      - name: Install dependencies
-        run: npm install
+    - name: Install dependencies
+      run: npm install
 
-      - name: Build the project
-        run: npm run build
+    - name: Build the project
+      run: npm run build
 
-      - name: Deploy to Niagahoster
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_HOST: 153.92.11.88
-          SSH_USERNAME: u430508759
-        run: |
-          echo "$SSH_PRIVATE_KEY" > private_key
-          chmod 600 private_key
-          scp -i private_key -r build/* $SSH_PRIVATE_KEY@$SSH_HOST:/path/to/public_html/
-          rm private_key
+    - name: Deploy to Niagahoster
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SSH_HOST: 153.92.11.88       # Ganti dengan IP server Anda
+        SSH_USERNAME: u430508759    # Ganti dengan username SSH Anda
+      run: |
+        echo "$SSH_PRIVATE_KEY" > private_key
+        chmod 600 private_key
+        scp -P 65002 -i private_key -r build/* $SSH_USERNAME@$SSH_HOST:/path/to/public_html/
+        rm private_key
