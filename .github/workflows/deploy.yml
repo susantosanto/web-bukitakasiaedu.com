@@ -3,7 +3,7 @@ name: Deploy to Niagahoster FTP
 on:
   push:
     branches:
-      - main  # Ganti dengan branch yang sesuai
+      - master  # Ganti dengan branch yang sesuai
 
 jobs:
   deploy:
