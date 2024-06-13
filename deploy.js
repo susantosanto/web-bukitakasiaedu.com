@@ -1,4 +1,9 @@
 import FtpDeploy from 'ftp-deploy';
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const ftpDeploy = new FtpDeploy();
 
@@ -7,7 +12,7 @@ const config = {
   password: process.env.FTP_PASSWORD,
   host: process.env.FTP_SERVER,
   port: 21,
-  localRoot: new URL('./dist', import.meta.url).pathname,
+  localRoot: path.join(__dirname, 'dist'),
   remoteRoot: '/public_html/Project-coba/',
   include: ['*', '**/*'],
   deleteRemote: false,
