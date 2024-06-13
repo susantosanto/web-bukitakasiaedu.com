@@ -3,7 +3,7 @@ name: Deploy to Niagahoster
 on:
   push:
     branches:
-      - main  # atau branch lain yang kamu gunakan
+      - master  # atau branch lain yang kamu gunakan
 
 jobs:
   build:
