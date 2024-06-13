@@ -3,7 +3,7 @@ name: Deploy to Niagahoster FTP
 on:
   push:
     branches:
-      - master  # Ganti dengan branch yang sesuai
+      - master  # Replace with the correct branch name
 
 jobs:
   deploy:
@@ -19,8 +19,11 @@ jobs:
     - name: Build project
       run: npm run build
 
+    - name: List files for debugging
+      run: ls -la
+
     - name: Install ftp-deploy
-      run: npm install -g ftp-deploy
+      run: npm install ftp-deploy
 
     - name: Deploy to FTP
       run: node deploy.mjs
