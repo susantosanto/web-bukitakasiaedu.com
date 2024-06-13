@@ -16,8 +16,10 @@ const config = {
   remoteRoot: '/public_html/Project-coba/',
   include: ['*', '**/*'],
   deleteRemote: false,
-  forcePasv: true,
+  forcePasv: true
 };
+
+console.log('Starting FTP deployment with config:', config);
 
 ftpDeploy.deploy(config)
   .then(res => console.log('Deploy successful:', res))
