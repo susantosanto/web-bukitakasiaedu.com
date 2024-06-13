@@ -10,11 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clear GitHub Actions cache
-      run: |
-        git rm -r --cached .
-        git reset --hard
-
     - name: Checkout repository
       uses: actions/checkout@v2
 
