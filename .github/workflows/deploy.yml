@@ -24,6 +24,11 @@ jobs:
     - name: Build the project
       run: npm run build
 
+    - name: Add server to known_hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan -p 65002 153.92.11.88 >> ~/.ssh/known_hosts
+
     - name: Deploy to Niagahoster
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
