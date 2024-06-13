@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Clear GitHub Actions cache
+      run: |
+        git rm -r --cached .
+        git reset --hard
+
     - name: Checkout repository
       uses: actions/checkout@v2
 
@@ -19,16 +24,10 @@ jobs:
     - name: Build project
       run: npm run build
 
-    - name: Clear GitHub Actions cache
-      run: |
-        git rm -r --cached .
-        git reset --hard
-
-
     - name: Deploy to FTP
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
         ftp-server: ftp://153.92.11.88/public_html/Project-coba  # Ganti dengan FTP server dan direktori tujuan kamu
         ftp-username: u430508759  # Ganti dengan username FTP kamu
         ftp-password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./build  # Ganti dengan direktori build proyek kamu
+        local-dir: ./dist  # Ganti dengan direktori build proyek kamu
