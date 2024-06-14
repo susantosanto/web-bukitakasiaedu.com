@@ -1,4 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useRef } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import Tentang from './Tentang';
@@ -13,11 +16,8 @@ import banner5 from '../assets/hero/banner5.webp';
 import banner6 from '../assets/hero/banner6.webp';
 
 const banners = [banner1, banner2, banner3, banner4, banner5, banner6];
-const bannersExtended = [...banners, banners[0]];
 
 const Hero = () => {
-    const [currentBanner, setCurrentBanner] = useState(0);
-    const bannerRef = useRef(null);
     const tentangRef = useRef(null);
 
     const scrollToTentang = () => {
@@ -28,64 +28,32 @@ const Hero = () => {
         }
     };
 
-    useEffect(() => {
-        const resizeHandler = () => {
-            const bannersContainer = bannerRef.current;
-            if (bannersContainer) {
-                bannersContainer.style.height = `${window.innerHeight}px`;
-            }
-        };
-
-        // Set initial height
-        resizeHandler();
-
-        // Attach resize event listener
-        window.addEventListener('resize', resizeHandler);
-
-        // Clean up event listener
-        return () => {
-            window.removeEventListener('resize', resizeHandler);
-        };
-    }, []);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const nextBannerIndex = (currentBanner + 1) % bannersExtended.length;
-            slideToBanner(nextBannerIndex);
-        }, 5000);
-        return () => clearInterval(interval);
-    }, [currentBanner]);
-
-    const slideToBanner = (index) => {
-        const bannersContainer = bannerRef.current;
-        bannersContainer.style.transition = 'transform 0.2s ease-in-out';
-        bannersContainer.style.transform = `translateX(-${index * 100}%)`;
-
-        if (index === banners.length) {
-            setTimeout(() => {
-                bannersContainer.style.transition = 'none';
-                bannersContainer.style.transform = 'translateX(0)';
-                setCurrentBanner(0);
-            }, 300); // Match the transition duration
-        } else {
-            setCurrentBanner(index);
-        }
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
     };
 
     return (
         <>
-            <div id="beranda" className='relative -top-24 overflow-hidden min-h-screen'>
-                <div className="relative w-full h-screen overflow-hidden">
-                    <div ref={bannerRef} className="flex w-full h-full">
-                        {bannersExtended.map((banner, index) => (
-                            <img
-                                key={index}
-                                className="w-full h-full object-cover flex-shrink-0 lazyload"
-                                src={banner}
-                                alt={`Banner ${index + 1}`}
-                            />
+            <div id="beranda" className="relative -mt-24 min-h-screen">
+                <div className="relative w-full h-screen">
+                    <Slider {...settings} className="w-full h-full">
+                        {banners.map((banner, index) => (
+                            <div key={index} className="w-full h-full">
+                                <img
+                                    className="w-full h-full object-cover flex-shrink-0 lazyload"
+                                    data-src={banner}
+                                    alt={`Banner ${index + 1}`}
+                                    style={{ height: '100vh', width: '100vw', objectFit: 'cover', objectPosition: 'center' }}
+                                />
+                            </div>
                         ))}
-                    </div>
+                    </Slider>
                     <div className='absolute inset-0 bg-black opacity-40'></div>
                 </div>
                 <div className='mx-auto absolute bottom-5 left-0 w-full text-white p-8'>

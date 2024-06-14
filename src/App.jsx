@@ -10,6 +10,9 @@ import SearchResultsPage from "./pages/SearchResultPage";
 import MaintenancePage from "./pages/MaintenancePage";
 import DetailBeritaPage from "./pages/DetailBeritaPage";
 import DetailKegiatanPage from "./pages/DetailKegiatanPage";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 
 
 const App = () => {
