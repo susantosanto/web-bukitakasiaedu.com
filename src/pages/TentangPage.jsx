@@ -199,7 +199,7 @@ const TentangPage = () => {
             <div id="visi" className="p-5 lg:-mb-20 mb-20 min-h-screen flex items-center justify-center bg-white">
                 <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="flex flex-col items-center bg-white shadow-md rounded-lg p-6 transform transition duration-500 hover:scale-105 hover:shadow-lg lg:h-96">
-                        <FontAwesomeIcon icon={faLeaf} className="lg:text-5xl text-4xl text-primary mb-4 animate-bounce" />
+                        <FontAwesomeIcon icon={faLeaf} className="lg:text-5xl text-xl text-primary mb-4 animate-bounce" />
                         <h3 className="lg:text-2xl text-xl font-semibold text-gray-800 mb-2">VISI</h3>
                         <p className="text-gray-600 leading-relaxed text-center">
                             Menyelenggarakan proses pendidikan “kembali ke alam” berspirit Qur&apos;ani yang mengoptimalisasi kecerdasan majemuk (aneka bakat) sebagai fokus pengembangan pengetahuan dan keterampilan spesifik peserta didik dengan tetap membekalkan keterampilan dasar (hard skill) sebagai modal bertahan hidup pada masa depan mereka.
