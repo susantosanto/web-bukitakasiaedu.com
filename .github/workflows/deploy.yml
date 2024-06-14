@@ -24,11 +24,11 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: List files for debugging
+      - name: List files in root directory for debugging
         run: ls -la
         working-directory: .
 
-      - name: List build directory for debugging
+      - name: List files in dist directory for debugging
         run: ls -la
         working-directory: dist/
 
@@ -38,5 +38,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/  # Pastikan path ini benar
+          local-dir: dist/  # Sesuaikan path ini dengan direktori hasil build Anda
           server-dir: /public_html/react-app/  # Sesuaikan dengan path di server Anda
