@@ -3,7 +3,7 @@ name: Deploy React App to Niagahoster
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -23,6 +23,14 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: List files for debugging
+        run: ls -la
+        working-directory: .
+
+      - name: List build directory for debugging
+        run: ls -la
+        working-directory: dist/
 
       - name: Deploy to FTP server
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
