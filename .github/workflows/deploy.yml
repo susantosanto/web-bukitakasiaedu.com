@@ -24,9 +24,18 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: List files in root directory for debugging
+        run: ls -la
+        working-directory: .
+
       - name: List files in dist directory for debugging
         run: ls -la
         working-directory: dist/
+
+      - name: Create subfolder in public_html
+        run: |
+          mkdir -p /public_html/react-app
+        shell: bash
 
       - name: Deploy to FTP server
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
@@ -34,6 +43,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}  # Gunakan FTP IP atau FTP Hostname
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}  # Biasanya port 21 untuk FTP
           local-dir: dist/  # Pastikan ini sesuai dengan direktori hasil build Anda
-          server-dir: /public_html/react-app  # Sesuaikan dengan direktori yang dituju di server Niagahoster Anda
+          server-dir: /public_html/react-app/  # Sesuaikan dengan direktori yang dituju di server Niagahoster Anda
