@@ -13,30 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
-      - name: List files in root directory for debugging
-        run: ls -la
-        working-directory: .
-
-      - name: List files in dist directory for debugging
-        run: ls -la
-        working-directory: dist/
-
-      - name: Create subfolder in public_html
-        run: |
-          mkdir -p public_html/react-app
-        shell: bash
-
       - name: Deploy to FTP server
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
