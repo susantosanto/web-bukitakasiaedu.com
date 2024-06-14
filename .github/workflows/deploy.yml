@@ -3,7 +3,7 @@ name: Deploy React App to Niagahoster
 on:
   push:
     branches:
-      - master
+      - master  # Ganti dengan branch yang sesuai
 
 jobs:
   deploy:
@@ -24,10 +24,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: List files in root directory for debugging
-        run: ls -la
-        working-directory: .
-
       - name: List files in dist directory for debugging
         run: ls -la
         working-directory: dist/
@@ -35,8 +31,9 @@ jobs:
       - name: Deploy to FTP server
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_SERVER }}  # Gunakan FTP IP atau FTP Hostname
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/  # Sesuaikan path ini dengan direktori hasil build Anda
-          server-dir: /public_html/react-app/  # Sesuaikan dengan path di server Anda
+          port: ${{ secrets.FTP_PORT }}  # Biasanya port 21 untuk FTP
+          local-dir: dist/  # Pastikan ini sesuai dengan direktori hasil build Anda
+          server-dir: /public_html/react-app  # Sesuaikan dengan direktori yang dituju di server Niagahoster Anda
