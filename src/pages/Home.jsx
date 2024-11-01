@@ -7,20 +7,19 @@ import News from "../component/News";
 import Comment from "../component/Comment";
 import LiveChat from "../component/LiveChat";
 
-
 const Home = () => {
-    return (
-        <div className="font-sans">
-            <Navbar />
-            <Hero />
-            <News />
-            <Comment />
-            <CallToAction />
-            <Footer />
-            <BackToTop />
-            <LiveChat />
-        </div>
-    );
+  return (
+    <div className="font-sans overflow-x-hidden max-w-full">
+      <Navbar />
+      <Hero />
+      <News />
+      <Comment />
+      <CallToAction />
+      <Footer />
+      <BackToTop />
+      <LiveChat />
+    </div>
+  );
 };
 
 export default Home;
