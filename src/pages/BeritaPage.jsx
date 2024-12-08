@@ -26,7 +26,7 @@ const BeritaPage = () => {
                 <div className="basis-1/2 flex flex-col space-y-4 md:space-y-7">
                     <h3 className="font-semibold text-orange text-sm md:text-base">{headerBerita.date} <span className="text-primary"> | {headerBerita.location}</span></h3>
                     <h3 className="text-2xl md:text-3xl">{headerBerita.title}</h3>
-                    <p className="text-slate-500 text-sm md:text-base">{headerBerita.shortDesc} <HashLink to={`/berita-page/${headerBerita.id}`} className="italic text-orange">Baca Selengkapnya</HashLink></p>
+                    <p className="text-slate-500 text-sm md:text-base">{headerBerita.shortDesc} <HashLink to={`/berita/${headerBerita.id}`} className="italic text-orange">Baca Selengkapnya</HashLink></p>
                 </div>
             </div>
 
@@ -37,7 +37,7 @@ const BeritaPage = () => {
                         <div className="p-4">
                             <h3 className="font-semibold text-orange text-sm md:text-base">{berita.date} <span className="text-primary"> | {berita.location}</span></h3>
                             <h3 className="text-sm md:text-base mt-2">{berita.title}</h3>
-                            <p className="text-slate-500 text-sm md:text-base mt-4">{berita.shortDesc} <HashLink to={`/berita-page/${berita.id}`} className="italic text-orange">Baca Selengkapnya</HashLink></p>
+                            <p className="text-slate-500 text-sm md:text-base mt-4">{berita.shortDesc} <HashLink to={`/berita/${berita.id}`} className="italic text-orange">Baca Selengkapnya</HashLink></p>
                         </div>
                     </div>
                 ))}

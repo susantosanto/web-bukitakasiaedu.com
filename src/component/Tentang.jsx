@@ -19,7 +19,7 @@ const Tentang = forwardRef((props, ref) => {
                     </p>
                 </div>
                 <div className="mt-16 md:mt-24 w-full md:w-fit text-sm lg:text-md text-center text-slate-100 mx-auto transform transition duration-500 hover:scale-105 hover:shadow-2xl">
-                    <HashLink smooth to='/tentang-page#tentangSekolah' className="py-3 px-6 md:py-4 md:px-8 bg-primary rounded-full lg:font-bold shadow-lg flex items-center justify-center">
+                    <HashLink smooth to='/tentang#tentangSekolah' className="py-3 px-6 md:py-4 md:px-8 bg-primary rounded-full lg:font-bold shadow-lg flex items-center justify-center">
                         Pelajari Selengkapnya Tentang SD Alam Bukit Akasia
                         <FontAwesomeIcon icon={faAngleRight} className="ml-2 md:ml-3 hidden lg:flex" />
                     </HashLink>

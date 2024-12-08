@@ -53,7 +53,7 @@ export default function DetailNews(props) {
             {newsLongDesc}
           </p>
           <p className="text-slate-500 mt-4 text-right">
-            <HashLink smooth to={`/berita-page#berita`} className="text-orange">
+            <HashLink smooth to={`/berita#berita`} className="text-orange">
               <FontAwesomeIcon icon={faLeftLong} className="text-orange-500" />{" "}
               Kembali
             </HashLink>

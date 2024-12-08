@@ -25,7 +25,7 @@ const KegiatanPage = () => {
                 <div className="basis-1/2 flex flex-col space-y-4 md:space-y-7">
                     <h3 className="font-semibold text-orange text-sm md:text-base">{headerKegiatan.date} <span className="text-primary"> | {headerKegiatan.location}</span></h3>
                     <h3 className="text-2xl md:text-3xl">{headerKegiatan.title}</h3>
-                    <p className="text-slate-500 text-sm md:text-base">{headerKegiatan.shortDesc} <HashLink to={`/kegiatan-page/${headerKegiatan.id}`} className="italic text-orange">Baca Selengkapnya</HashLink></p>
+                    <p className="text-slate-500 text-sm md:text-base">{headerKegiatan.shortDesc} <HashLink to={`/kegiatan/${headerKegiatan.id}`} className="italic text-orange">Baca Selengkapnya</HashLink></p>
                 </div>
             </div>
             {/* End Section Header Kegiatan */}
@@ -38,7 +38,7 @@ const KegiatanPage = () => {
                         <div className="p-4">
                             <h3 className="font-semibold text-orange text-sm md:text-base">{kegiatan.date} <span className="text-primary"> | {kegiatan.location}</span></h3>
                             <h3 className="text-sm md:text-base mt-2">{kegiatan.title}</h3>
-                            <p className="text-slate-500 text-sm md:text-base mt-4">{kegiatan.shortDesc} <HashLink to={`/kegiatan-page/${kegiatan.id}`} className="italic text-orange">Baca Selengkapnya</HashLink></p>
+                            <p className="text-slate-500 text-sm md:text-base mt-4">{kegiatan.shortDesc} <HashLink to={`/kegiatan/${kegiatan.id}`} className="italic text-orange">Baca Selengkapnya</HashLink></p>
                         </div>
                     </div>
                 ))}

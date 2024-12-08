@@ -73,20 +73,20 @@ const NavbarSecondary = () => {
     <div className={`z-10 top-0 bg-white sticky transition-all duration-300`}>
       <div className={`hidden lg:block`}>
         <div className="w-full lg:w-8/12 mx-auto h-12 flex items-center">
-          <div className="basis-1/2 hidden lg:flex items-center overflow-hidden">
-            <div className="w-full whitespace-nowrap animate-marquee">
+          <div className="basis-1/2 hidden lg:flex items-center overflow-hidden  max-w-full w-4/12">
+            <a href="https://maps.app.goo.gl/cSmCUJzwYKUscCnTA" className="whitespace-nowrap animate-marquee">
               <p className="font-light mb-2 flex items-center text-xs sm:text-sm">
                 <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
                 Kawasan Bukit Akasia Komplek Panorama Jatinangor, Cinanjung
                 Tanjungari - Sumedang
               </p>
-            </div>
+            </a>
           </div>
-          <div className="basis-1/2 flex justify-end items-center space-x-2 sm:space-x-4 text-xs sm:text-sm">
+          <div className="basis-1/2 flex justify-end items-center space-x-2 sm:space-x-4 text-xs sm:text-sm w-8/12">
             <h1 className="flex items-center">
               <FontAwesomeIcon icon={faPhone} className="mr-2 text-primary" />
               <span className="">
-                <a href="tel:+6282126016965" className="text-slate-700">
+                <a href="https://wa.me/6282126016965" className="text-slate-700">
                   +62821 2601 6965
                 </a>
               </span>
@@ -119,11 +119,11 @@ const NavbarSecondary = () => {
           <div
             className={`w-3/12 flex items-center mx-auto transition-all duration-300 mt-0`}
           >
-            <div
+            <a href="/"
               className={`w-52 h-52 rounded-full justify-center flex items-center transition-all duration-300 `}
             >
               <img src={logo} alt="logo" className={`w-12 h-12`} />
-            </div>
+            </a>
           </div>
           <div className="w-9/12 flex justify-end w-full">
             <nav className="w-full hidden lg:flex justify-evenly px-6 text-slate-300 items-center">
@@ -150,7 +150,7 @@ const NavbarSecondary = () => {
                       : "text-slate-100"
                   }`}
                 >
-                  <HashLink smooth to="/tentang-page#tentangSekolah">
+                  <HashLink smooth to="/tentang#tentangSekolah">
                     Tentang Kami
                   </HashLink>
                 </div>
@@ -160,14 +160,14 @@ const NavbarSecondary = () => {
                 >
                   <HashLink
                     smooth
-                    to="/tentang-page#tentangSekolah"
+                    to="/tentang#tentangSekolah"
                     className="block px-4 py-3 text-slate-100 hover:bg-primary hover:shadow-lg"
                   >
                     Tentang Sekolah
                   </HashLink>
                   <HashLink
                     smooth
-                    to="/tentang-page#kurikulum"
+                    to="/tentang#kurikulum"
                     href="#"
                     className="block px-4 py-3 text-slate-100 hover:bg-primary hover:shadow-lg"
                   >
@@ -175,7 +175,7 @@ const NavbarSecondary = () => {
                   </HashLink>
                   <HashLink
                     smooth
-                    to="/tentang-page#visi"
+                    to="/tentang#visi"
                     href="#"
                     className="block px-4 py-3 text-slate-100 hover:bg-primary hover:shadow-lg"
                   >
@@ -183,7 +183,7 @@ const NavbarSecondary = () => {
                   </HashLink>
                   <HashLink
                     smooth
-                    to="/tentang-page/#strukturOrganisasi"
+                    to="/tentang/#strukturOrganisasi"
                     href="#"
                     className="block px-4 py-3 text-slate-100 hover:bg-primary hover:shadow-lg"
                   >
@@ -191,7 +191,7 @@ const NavbarSecondary = () => {
                   </HashLink>
                   <HashLink
                     smooth
-                    to="/tentang-page#prakata"
+                    to="/tentang#prakata"
                     href="#"
                     className="block px-4 py-3 text-slate-100 hover:bg-primary hover:shadow-lg"
                   >
@@ -202,7 +202,7 @@ const NavbarSecondary = () => {
               <div className="group relative py-8">
                 <HashLink
                   smooth
-                  to="/fasilitas-page#fasilitas"
+                  to="/fasilitas#fasilitas"
                   href=""
                   className={` group-hover:text-white py-2 ${
                     isActive("#fasilitas")
@@ -216,7 +216,7 @@ const NavbarSecondary = () => {
               <div className="group relative py-8">
                 <HashLink
                   smooth
-                  to={"/berita-page#berita"}
+                  to={"/berita#berita"}
                   href=""
                   className={` group-hover:text-white py-2 ${
                     isActive(
@@ -237,14 +237,14 @@ const NavbarSecondary = () => {
                 >
                   <HashLink
                     smooth
-                    to="/berita-page#berita"
+                    to="/berita#berita"
                     className="block px-4 py-4 text-slate-100 hover:bg-primary hover:shadow-lg"
                   >
                     Berita
                   </HashLink>
                   <HashLink
                     smooth
-                    to="/kegiatan-page#kegiatan"
+                    to="/kegiatan#kegiatan"
                     href="#"
                     className="block px-4 py-3 text-slate-100 hover:bg-primary hover:shadow-lg"
                   >
@@ -256,7 +256,7 @@ const NavbarSecondary = () => {
               <div>
                 <HashLink
                   smooth
-                  to={"/hubungikami-page#hubungiKami"}
+                  to={"/hubungikami#hubungiKami"}
                   href=""
                   className={`group-hover:text-white py-2 ${
                     isActive("#hubungiKami")
@@ -293,14 +293,14 @@ const NavbarSecondary = () => {
                 </div>
               </div>
 
-              <div className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 cursor-pointer hidden lg:block">
+              <div className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 cursor-pointer hidden lg:block text-sm">
                 <a href="https://docs.google.com/forms/d/1v4jGEnYmL9QreaFEl6NktSdk3sxb2h91-WQF7Kb8TI8">
                   Daftar PPDB Disini
                 </a>
               </div>
             </nav>
 
-            <div className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 cursor-pointer block lg:hidden">
+            <div className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 cursor-pointer block lg:hidden text-sm">
               <a href="https://docs.google.com/forms/d/1v4jGEnYmL9QreaFEl6NktSdk3sxb2h91-WQF7Kb8TI8">
                 Daftar PPDB Disini
               </a>
@@ -367,7 +367,7 @@ const NavbarSecondary = () => {
               <div className="ml-4 mt-2">
                 <HashLink
                   smooth
-                  to="/tentang-page#tentangSekolah"
+                  to="/tentang#tentangSekolah"
                   className="block py-2 text-base"
                   onClick={toggleMobileMenu}
                 >
@@ -375,7 +375,7 @@ const NavbarSecondary = () => {
                 </HashLink>
                 <HashLink
                   smooth
-                  to="/tentang-page#kurikulum"
+                  to="/tentang#kurikulum"
                   className="block py-2 text-base"
                   onClick={toggleMobileMenu}
                 >
@@ -383,7 +383,7 @@ const NavbarSecondary = () => {
                 </HashLink>
                 <HashLink
                   smooth
-                  to="/tentang-page#visi"
+                  to="/tentang#visi"
                   className="block py-2 text-base"
                   onClick={toggleMobileMenu}
                 >
@@ -391,7 +391,7 @@ const NavbarSecondary = () => {
                 </HashLink>
                 <HashLink
                   smooth
-                  to="/tentang-page#strukturOrganisasi"
+                  to="/tentang#strukturOrganisasi"
                   className="block py-2 text-base"
                   onClick={toggleMobileMenu}
                 >
@@ -399,7 +399,7 @@ const NavbarSecondary = () => {
                 </HashLink>
                 <HashLink
                   smooth
-                  to="/tentang-page#prakata"
+                  to="/tentang#prakata"
                   className="block py-2 text-base"
                   onClick={toggleMobileMenu}
                 >
@@ -410,7 +410,7 @@ const NavbarSecondary = () => {
           </div>
           <HashLink
             smooth
-            to="/fasilitas-page#fasilitas"
+            to="/fasilitas#fasilitas"
             className="block py-2 text-lg"
             onClick={toggleMobileMenu}
           >
@@ -430,7 +430,7 @@ const NavbarSecondary = () => {
               <div className="ml-4 mt-2">
                 <HashLink
                   smooth
-                  to="/berita-page#berita"
+                  to="/berita#berita"
                   className="block py-2 text-base"
                   onClick={toggleMobileMenu}
                 >
@@ -438,7 +438,7 @@ const NavbarSecondary = () => {
                 </HashLink>
                 <HashLink
                   smooth
-                  to="/kegiatan-page#kegiatan"
+                  to="/kegiatan#kegiatan"
                   className="block py-2 text-base"
                   onClick={toggleMobileMenu}
                 >
@@ -449,7 +449,7 @@ const NavbarSecondary = () => {
           </div>
           <HashLink
             smooth
-            to="/hubungikami-page#hubungiKami"
+            to="/hubungikami#hubungiKami"
             className="block py-2 text-lg"
             onClick={toggleMobileMenu}
           >

@@ -12,6 +12,7 @@ import DetailBeritaPage from "./pages/DetailBeritaPage";
 import DetailKegiatanPage from "./pages/DetailKegiatanPage";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import AddArticle from "./component/AddArticle";
 
 
 
@@ -20,16 +21,17 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/tentang-page" element={<TentangPage />} />
-        <Route path="/berita-page" element={<BeritaPage />} />
-        <Route path="/berita-page/:id" element={<DetailBeritaPage />} />
-        <Route path="/kegiatan-page" element={<KegiatanPage />} />
-        <Route path="/kegiatan-page/:id" element={<DetailKegiatanPage />} />
-        <Route path="/fasilitas-page" element={<FasilitasPage />} />
-        <Route path="/hubungikami-page" element={<HubungiKamiPage />} />
-        <Route path="/search-page" element={<SearchResultsPage />} />
+        <Route path="/tentang" element={<TentangPage />} />
+        <Route path="/berita" element={<BeritaPage />} />
+        <Route path="/berita/:id" element={<DetailBeritaPage />} />
+        <Route path="/kegiatan" element={<KegiatanPage />} />
+        <Route path="/kegiatan/:id" element={<DetailKegiatanPage />} />
+        <Route path="/fasilitas" element={<FasilitasPage />} />
+        <Route path="/hubungikami" element={<HubungiKamiPage />} />
+        <Route path="/search" element={<SearchResultsPage />} />
         {/* <Route path="*" element={<NotFoundPage />} /> */}
         <Route path="*" element={<MaintenancePage />} />
+        <Route path="/Add-Article" element={<AddArticle />} />
       </Routes>
     </BrowserRouter>
   );

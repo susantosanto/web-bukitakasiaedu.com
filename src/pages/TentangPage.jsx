@@ -52,7 +52,7 @@ const TentangPage = () => {
                         <img src={imgTentang} className="object-cover w-full h-full lazyload" alt="Tentang Kami" />
                     </div>
                     <div className="mt-14 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl">
-                        <HashLink smooth to='/fasilitas-page#fasilitas' className="py-2 px-4 text-sm bg-primary rounded-full font-semibold shadow-lg text-white">
+                        <HashLink smooth to='/fasilitas#fasilitas' className="py-2 px-4 text-sm bg-primary rounded-full font-semibold shadow-lg text-white">
                             Fasilitas di SD Alam Bukit Akasia
                             <FontAwesomeIcon icon={faAngleRight} className="ml-3" />
                         </HashLink>
@@ -81,7 +81,7 @@ const TentangPage = () => {
                             <img src={imgTentang} className="object-cover w-full h-full lazyload" alt="Tentang Kami" />
                         </div>
                         <div className="mt-14 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl">
-                            <HashLink smooth to='/fasilitas-page#fasilitas' className="py-3 px-4 text-sm bg-primary rounded-full font-bold shadow-lg text-white">
+                            <HashLink smooth to='/fasilitas#fasilitas' className="py-3 px-4 text-sm bg-primary rounded-full font-bold shadow-lg text-white">
                                 Jelajahi Fasilitas di SD Alam Bukit Akasia
                                 <FontAwesomeIcon icon={faAngleRight} className="ml-3" />
                             </HashLink>
