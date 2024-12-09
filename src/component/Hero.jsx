@@ -22,7 +22,7 @@ const Hero = () => {
 
     const scrollToTentang = () => {
         if (tentangRef.current) {
-            const yOffset = -190; // Adjust this value based on your navbar height
+            const yOffset = -190; 
             const yPosition = tentangRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
             window.scrollTo({ top: yPosition, behavior: 'smooth' });
         }

@@ -1,14 +1,19 @@
 import 'lazysizes';
 import ListBerita from '../data/ListBerita.jsx';
-import { ListKegiatan } from '../data/ListKegiatan.jsx';
+import ListKegiatan from '../data/ListKegiatan.jsx'
 import NewsItem from './NewsItem.jsx';  // Corrected path
 
-
 const News = () => {
-    const headerBerita = ListBerita[ListBerita.length - 1];
-    const lastBerita = ListBerita[ListBerita.length - 2];
-    const headerKegiatan = ListKegiatan[ListKegiatan.length - 1];
-    const lastKegiatan = ListKegiatan[ListKegiatan.length - 2];
+    const beritaList = ListBerita()
+    const kegiatanList = ListKegiatan()
+
+    const headerBerita = beritaList[beritaList.length - 1];
+    const lastBerita = beritaList[beritaList.length - 2];
+    const headerKegiatan = kegiatanList[kegiatanList.length - 1];
+    const lastKegiatan = kegiatanList[kegiatanList.length - 2];
+
+    console.log("beritaList nihh bro: " , beritaList)
+    console.log("kegiatanList nihh bro: " , kegiatanList)
 
     return (
         <div className="bg-slate-100 min-h-screen -mt-52 p-10">

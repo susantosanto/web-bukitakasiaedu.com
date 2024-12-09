@@ -1,16 +1,20 @@
+// KegiatanPage.jsx
+
 import NavbarSecondary from "../component/NavbarSecondary";
 import Footer from "../component/Footer";
 import bannerTentang from '../assets/tentang-page/hasilbelajar.webp';
 import Header from "../component/Header";
 import 'lazysizes';
 import { HashLink } from "react-router-hash-link";
-import { ListKegiatan } from "../data/ListKegiatan";
+import ListKegiatan from "../data/ListKegiatan";  // Pastikan sesuai dengan cara ekspor
 import ScroolToTop from "../component/ScroolToTop";
 
 const KegiatanPage = () => {
+    // Pastikan ListKegiatan dipanggil sebagai fungsi untuk mendapatkan list kegiatan
+    const kegiatanList = ListKegiatan();  // Memanggil fungsi ListKegiatan untuk mendapatkan data
 
-    const headerKegiatan = ListKegiatan[ListKegiatan.length - 1];
-    const remainingKegiatan = ListKegiatan.slice(0, -1);
+    const headerKegiatan = kegiatanList[kegiatanList.length - 1];
+    const remainingKegiatan = kegiatanList.slice(0, -1);
 
     return (
         <div className="w-full">
@@ -46,7 +50,6 @@ const KegiatanPage = () => {
             {/* End Section Kegiatan Lainnya */}
 
             <Footer />
-
             <ScroolToTop />
         </div>
     );

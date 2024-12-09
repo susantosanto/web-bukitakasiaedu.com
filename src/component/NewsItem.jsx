@@ -1,3 +1,4 @@
+import { Timestamp } from "firebase/firestore"; // Pastikan Timestamp diimpor jika belum ada
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
@@ -5,11 +6,26 @@ import { useNavigate } from "react-router-dom";
 const NewsItem = ({ id, date, category, imgSrc, title }) => {
   const navigate = useNavigate();
 
+  console.log("imgsource nihh bro: ", imgSrc);
+
   const formatDate = (dateStr) => {
     if (!dateStr) return { day: "", month: "", year: "" };
+
+    // Periksa apakah dateStr adalah objek Timestamp
+    if (dateStr instanceof Timestamp) {
+      const date = dateStr.toDate();
+      dateStr = date.toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      });
+    }
+
+    // Memisahkan tanggal
     const [day, month, year] = dateStr.split(" ");
     return { day, month, year };
   };
+
   const { day, month, year } = formatDate(date);
 
   const handleClick = () => {
