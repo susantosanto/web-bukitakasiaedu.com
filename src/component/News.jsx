@@ -12,9 +12,6 @@ const News = () => {
     const headerKegiatan = kegiatanList[kegiatanList.length - 1];
     const lastKegiatan = kegiatanList[kegiatanList.length - 2];
 
-    console.log("beritaList nihh bro: " , beritaList)
-    console.log("kegiatanList nihh bro: " , kegiatanList)
-
     return (
         <div className="bg-slate-100 min-h-screen -mt-52 p-10">
             <div className="w-12/12 lg:w-8/12 mx-auto flex flex-col items-center overflow-hidden">

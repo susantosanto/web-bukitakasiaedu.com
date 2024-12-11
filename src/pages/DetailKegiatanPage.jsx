@@ -12,7 +12,7 @@ import DetailNews from "../component/DetailNews";
 const DetailKegiatanPage = () => {
     const { id } = useParams();
     const kegiatanList = ListKegiatan()
-    const kegiatan = kegiatanList.find(item => item.id === parseInt(id));
+    const kegiatan = kegiatanList.find(item => item.id === id);
 
     if (!kegiatan) {
         return <div className='font-semibold text-orange text-center'>Kegiatan not found.</div>;
@@ -25,9 +25,9 @@ const DetailKegiatanPage = () => {
             <DetailNews
                 newsCategory={kegiatan.category}
                 newsDate={kegiatan.date}
-                newsImg={kegiatan.imgSrc}
+                newsImg={kegiatan.file}
                 newsLocation={kegiatan.location}
-                newsLongDesc={kegiatan.longDesc}
+                newsLongDesc={kegiatan.longdesc}
                 newsTitle={kegiatan.title}
             />
             <Footer />

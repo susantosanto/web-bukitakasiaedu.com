@@ -149,7 +149,7 @@ const Navbar = () => {
             </div>
           </div>
           <div className="w-full flex justify-between">
-            <nav className="w-full justify-between px-6 text-slate-300 items-center hidden lg:flex">
+            <nav className="w-full justify-between text-slate-300 items-center hidden lg:flex">
               <div>
                 <HashLink
                   smooth
@@ -232,14 +232,14 @@ const Navbar = () => {
                   <HashLink
                     smooth
                     to="/berita#berita"
-                    className="block px-4 py-4 text-slate-100 hover:bg-primary hover:shadow-lg"
+                    className="block px-4 py-4 text-slate-100 hover:bg-primary hover:shadow-lg w-full"
                   >
                     Berita
                   </HashLink>
                   <HashLink
                     smooth
                     to="/kegiatan#kegiatan"
-                    className="block px-4 py-3 text-slate-100 hover:bg-primary hover:shadow-lg"
+                    className="block px-4 py-3 text-slate-100 hover:bg-primary hover:shadow-lg w-full"
                   >
                     Kegiatan
                   </HashLink>

@@ -6,15 +6,19 @@ import bannerTentang from '../assets/tentang-page/hasilbelajar.webp';
 import Header from "../component/Header";
 import 'lazysizes';
 import { HashLink } from "react-router-hash-link";
-import ListKegiatan from "../data/ListKegiatan";  // Pastikan sesuai dengan cara ekspor
 import ScroolToTop from "../component/ScroolToTop";
+import ListKegiatan from "../data/ListKegiatan";  // Pastikan sesuai dengan cara ekspor
 
 const KegiatanPage = () => {
-    // Pastikan ListKegiatan dipanggil sebagai fungsi untuk mendapatkan list kegiatan
     const kegiatanList = ListKegiatan();  // Memanggil fungsi ListKegiatan untuk mendapatkan data
+    console.log("KEGIATAN list: ", kegiatanList)
+    if (kegiatanList.length === 0) {
+        return <div>No kegiatan available.</div>;
+    }
 
     const headerKegiatan = kegiatanList[kegiatanList.length - 1];
     const remainingKegiatan = kegiatanList.slice(0, -1);
+    console.log("ini kegiatan list: ", kegiatanList, "ini header kegiatan: ", headerKegiatan, "remaining kegiatan: ", remainingKegiatan)
 
     return (
         <div className="w-full">
@@ -24,7 +28,7 @@ const KegiatanPage = () => {
             {/* Section Header Kegiatan */}
             <div className="w-10/12 md:w-9/12 mx-auto mt-10 md:mt-20 flex flex-col md:flex-row justify-between space-y-8 md:space-y-0 md:space-x-8 py-8 mb-16">
                 <div className="basis-1/2 w-full md:w-96 h-48 md:h-80 border overflow-hidden shadow-lg">
-                    <img src={headerKegiatan.imgSrc} alt="" className="object-cover p-4 w-full h-full" />
+                    <img src={headerKegiatan.file} alt="" className="object-cover p-4 w-full h-full" />
                 </div>
                 <div className="basis-1/2 flex flex-col space-y-4 md:space-y-7">
                     <h3 className="font-semibold text-orange text-sm md:text-base">{headerKegiatan.date} <span className="text-primary"> | {headerKegiatan.location}</span></h3>
@@ -38,7 +42,7 @@ const KegiatanPage = () => {
             <div className="w-11/12 md:w-9/12 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                 {remainingKegiatan.map((kegiatan, index) => (
                     <div key={index} className="w-full border shadow-lg overflow-hidden">
-                        <img src={kegiatan.imgSrc} alt="" className="object-cover w-full h-48" />
+                        <img src={kegiatan.file} alt="" className="object-cover w-full h-48" />
                         <div className="p-4">
                             <h3 className="font-semibold text-orange text-sm md:text-base">{kegiatan.date} <span className="text-primary"> | {kegiatan.location}</span></h3>
                             <h3 className="text-sm md:text-base mt-2">{kegiatan.title}</h3>

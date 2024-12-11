@@ -7,12 +7,13 @@ import { HashLink } from "react-router-hash-link";
 import ListBerita from "../data/ListBerita";
 
 const BeritaPage = () => {
-    if (ListBerita.length === 0) {
+    const beritaList = ListBerita()
+    if (beritaList.length === 0) {
         return <div>No Berita available.</div>;
     }
 
-    const headerBerita = ListBerita[ListBerita.length - 1];
-    const remainingBerita = ListBerita.slice(0, -1);
+    const headerBerita = beritaList[beritaList.length - 1];
+    const remainingBerita = beritaList.slice(0, -1);
 
     return (
         <div id="berita" className="w-full">
@@ -21,7 +22,7 @@ const BeritaPage = () => {
 
             <div className="w-10/12 md:w-9/12 mx-auto mt-10 md:mt-20 flex flex-col md:flex-row justify-between space-y-8 md:space-y-0 md:space-x-8 py-8 mb-16">
                 <div className="basis-1/2 w-full md:w-96 h-48 md:h-80 border overflow-hidden shadow-lg">
-                    <img src={headerBerita.imgSrc} alt={headerBerita.title} className="object-cover p-4 w-full h-full" />
+                    <img src={headerBerita.file} alt={headerBerita.title} className="object-cover p-4 w-full h-full" />
                 </div>
                 <div className="basis-1/2 flex flex-col space-y-4 md:space-y-7">
                     <h3 className="font-semibold text-orange text-sm md:text-base">{headerBerita.date} <span className="text-primary"> | {headerBerita.location}</span></h3>
@@ -33,7 +34,7 @@ const BeritaPage = () => {
             <div className="w-11/12 md:w-9/12 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                 {remainingBerita.map((berita) => (
                     <div key={berita.id} className="w-full border shadow-lg overflow-hidden">
-                        <img src={berita.imgSrc} alt={berita.title} className="object-cover w-full h-48" />
+                        <img src={berita.file} alt={berita.title} className="object-cover w-full h-48" />
                         <div className="p-4">
                             <h3 className="font-semibold text-orange text-sm md:text-base">{berita.date} <span className="text-primary"> | {berita.location}</span></h3>
                             <h3 className="text-sm md:text-base mt-2">{berita.title}</h3>

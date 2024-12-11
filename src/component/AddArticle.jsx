@@ -22,6 +22,8 @@ export default function AddArticle() {
     quote: "",
   });
 
+  console.log("data article nihh bro: ", articleData)
+
   const handleCodeChange = (e) => {
     setInputCode(e.target.value);
   };
@@ -54,45 +56,51 @@ export default function AddArticle() {
   const handleArticleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setIsLoading(true)
+      setIsLoading(true);
       const file = articleData.file;
       if (!file) {
         return alert("Silahkan upload gambar sebagai thumbnail");
       }
-
+  
       const formData = new FormData();
       formData.append("file", file);
       formData.append("upload_preset", "ARTICLE_AKASIA");
-
+  
       const resImg = await fetch(import.meta.env.VITE_CLOUDINARY_UPLOAD_URL, {
         method: "POST",
         body: formData,
       });
-
+  
       if (!resImg.ok) return alert("Gagal mengupload foto");
-
+  
       const img = await resImg.json();
-
-
-
+  
+      const formattedDate = new Date(articleData.date);
+      const formattedDateString = new Intl.DateTimeFormat("id-ID", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+      }).format(formattedDate);
+  
       const updateArticleData = {
         ...articleData,
         file: img.secure_url,
-      }
-
+        date: formattedDateString, 
+      };
+  
       const res = await addDoc(collection(db, "articles"), {
         ...updateArticleData,
         createdAt: new Date(),
       });
-
+  
       if (!res) return alert("Gagal mengupload artikel");
-
+  
       console.log("Data artikel yang di-upload ke database: ", res);
-
+  
       alert("Artikel berhasil diunggah!");
-
-      navigate("/#dashboard")
-
+  
+      navigate("/#dashboard");
+  
       setArticleData({
         title: "",
         category: "",
@@ -104,14 +112,16 @@ export default function AddArticle() {
         sourceimg: "",
         linkdocumentation: "",
         quote: "",
+        publishedBy: '',
       });
     } catch (error) {
       console.log("Errornya: ", error);
       alert("Terjadi kesalahan saat mengunggah artikel.");
-    } finally{
-      setIsLoading(false)
+    } finally {
+      setIsLoading(false);
     }
   };
+  
 
   return (
     <>
@@ -290,21 +300,55 @@ export default function AddArticle() {
                 placeholder="Masukkan kutipan"
               />
             </div>
+            <div className="w-full">
+              <label htmlFor="publishedBy" className="block text-sm font-medium text-gray-700">Published By</label>
+              <input
+                type="text"
+                id="publishedBy"
+                name="publishedBy"
+                value={articleData.publishedBy}
+                onChange={handleInputChange}
+                className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-green-500 focus:border-green-500"
+                placeholder="Di Publikasikan Oleh"
+                required
+              />
+            </div>
 
             {/* Submit Button */}
             <button
   type="submit"
-  className={"w-full py-3 px-4 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"}
+  className="w-full py-3 px-4 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 flex items-center justify-center"
 >
   {isLoading ? (
     <>
+      <svg
+        className="animate-spin mr-3 w-5 h-5 text-white" // Menggunakan ukuran dan warna yang sesuai
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          strokeWidth="4"
+          fill="none"
+        />
+        <path
+          d="M4 12a8 8 0 1 1 16 0A8 8 0 0 1 4 12z"
+          fill="currentColor"
+        />
+      </svg>
       <p>Processing...</p>
-      <svg className="animate-spin mr-3" viewBox="0 0 24 24" />
     </>
   ) : (
     <p>Unggah Artikel</p>
   )}
 </button>
+
+
           </form>
         </div>
       )}

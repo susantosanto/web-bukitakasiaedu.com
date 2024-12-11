@@ -72,7 +72,7 @@ const NavbarSecondary = () => {
   return (
     <div className={`z-10 top-0 bg-white sticky transition-all duration-300`}>
       <div className={`hidden lg:block`}>
-        <div className="w-full lg:w-8/12 mx-auto h-12 flex items-center">
+        <div className="w-full lg:w-9/12 mx-auto h-12 flex justify-between items-center">
           <div className="basis-1/2 hidden lg:flex items-center overflow-hidden  max-w-full w-4/12">
             <a href="https://maps.app.goo.gl/cSmCUJzwYKUscCnTA" className="whitespace-nowrap animate-marquee">
               <p className="font-light mb-2 flex items-center text-xs sm:text-sm">
@@ -125,8 +125,8 @@ const NavbarSecondary = () => {
               <img src={logo} alt="logo" className={`w-12 h-12`} />
             </a>
           </div>
-          <div className="w-9/12 flex justify-end w-full">
-            <nav className="w-full hidden lg:flex justify-evenly px-6 text-slate-300 items-center">
+          <div className="w-9/12 flex justify-between w-full">
+            <nav className="w-full hidden lg:flex justify-between px-6 text-slate-300 items-center">
               <div>
                 <HashLink
                   smooth
@@ -238,7 +238,7 @@ const NavbarSecondary = () => {
                   <HashLink
                     smooth
                     to="/berita#berita"
-                    className="block px-4 py-4 text-slate-100 hover:bg-primary hover:shadow-lg"
+                    className="block px-4 py-4 text-slate-100 hover:bg-primary hover:shadow-lg w-full"
                   >
                     Berita
                   </HashLink>
@@ -246,7 +246,7 @@ const NavbarSecondary = () => {
                     smooth
                     to="/kegiatan#kegiatan"
                     href="#"
-                    className="block px-4 py-3 text-slate-100 hover:bg-primary hover:shadow-lg"
+                    className="block px-4 py-3 text-slate-100 hover:bg-primary hover:shadow-lg w-full"
                   >
                     Kegiatan
                   </HashLink>

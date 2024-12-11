@@ -12,7 +12,11 @@ import DetailNews from '../component/DetailNews';
 
 const DetailBeritaPage = () => {
     const { id } = useParams();
-    const berita = ListBerita.find((item) => item.id === parseInt(id, 10));
+    const beritaList = ListBerita()
+    const berita = beritaList.find(item => item.id === id);
+
+    console.log("ini id nya bro: ", id, "ini kegiatan listnya: ", beritaList, 'dan ini kegiatan yang mau di render: ', berita)
+
 
     if (!berita) {
         return <div className='font-semibold text-orange text-center'>Berita not found.</div>;
@@ -26,10 +30,11 @@ const DetailBeritaPage = () => {
             <DetailNews
                 newsCategory={berita.category}
                 newsDate={berita.date}
-                newsImg={berita.imgSrc}
+                newsImg={berita.file}
                 newsLocation={berita.location}
-                newsLongDesc={berita.longDesc}
+                newsLongDesc={berita.longdesc}
                 newsTitle={berita.title}
+                sourceimg={berita.file}
             />
 
             <Footer />

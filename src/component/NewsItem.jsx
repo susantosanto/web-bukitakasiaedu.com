@@ -3,10 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
-const NewsItem = ({ id, date, category, imgSrc, title }) => {
+const NewsItem = ({ id, date, category, file, title }) => {
   const navigate = useNavigate();
-
-  console.log("imgsource nihh bro: ", imgSrc);
 
   const formatDate = (dateStr) => {
     if (!dateStr) return { day: "", month: "", year: "" };
@@ -29,7 +27,7 @@ const NewsItem = ({ id, date, category, imgSrc, title }) => {
   const { day, month, year } = formatDate(date);
 
   const handleClick = () => {
-    navigate(`/${category === "Berita" ? "berita" : "kegiatan"}-page/${id}`);
+    navigate(`/${category === "berita" ? "berita" : "kegiatan"}/${id}`);
   };
 
   return (
@@ -46,7 +44,7 @@ const NewsItem = ({ id, date, category, imgSrc, title }) => {
         </div>
         <div className="w-1/2 overflow-hidden bg-white shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl max-h-64">
           <img
-            src={imgSrc}
+            src={file}
             alt=""
             className="max-h-64 object-cover w-full h-full p-2 lazyload"
           />
@@ -66,7 +64,7 @@ const NewsItem = ({ id, date, category, imgSrc, title }) => {
       {/* Mobile and Tablet View */}
       <div className="md:hidden bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl mb-8">
         <img
-          src={imgSrc}
+          src={file}
           alt=""
           className="w-full h-48 object-cover lazyload"
         />

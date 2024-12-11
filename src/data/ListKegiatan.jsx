@@ -6,6 +6,8 @@ import clubGambarSep from "../assets/news/clubGambarSep.png";
 import clubMusikSep from "../assets/news/clubMusikSep.png";
 import clubTaekwondoSep from "../assets/news/clubTaekwondoSep.png";
 import { useEffect, useState } from "react";
+import { db } from "../firebaseConfig";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const ListKegiatan = () => {
   const [kegiatanList, setKegiatanList] = useState([]);
@@ -13,7 +15,7 @@ const ListKegiatan = () => {
   useEffect(() => {
     const fetchData = async () => {
       const arraylist = [];
-      const q = query(collection(db, "articles"), where("category", "==", "kegiatan"));
+      const q = query(collection(db, "articles"), where("category", "==", "Kegiatan"));
       const querySnapshot = await getDocs(q);
 
       querySnapshot.forEach((doc) => {
@@ -28,15 +30,15 @@ const ListKegiatan = () => {
 
     fetchData();
   }, []);
-
+  // console.log("kegieatan list: ", kegiatanList)
   return kegiatanList;
 };
 
 export default ListKegiatan
 
-// export const ListKegiatan = [
+// export const aricle = [
 //   {
-//     id: 1,
+//     id: 2,
 //     date: "29 Juli 2023",
 //     category: "Kegiatan",
 //     location: "Sekolah Dasar Alam Bukit Akasia",
@@ -55,7 +57,7 @@ export default ListKegiatan
 //     link: "/news-page-3",
 //   },
 //   {
-//     id: 2,
+//     id: 1,
 //     date: "20 Mei 2024",
 //     category: "Kegiatan",
 //     location: "Sekolah Dasar Alam Bukit Akasia",
@@ -72,7 +74,7 @@ export default ListKegiatan
 //     link: "/news-page-3",
 //   },
 //   {
-//     id: 3,
+//     id: 6,
 //     date: "26 September 2024",
 //     category: "Kegiatan",
 //     location: "Sekolah Dasar Alam Bukit Akasia",
@@ -92,7 +94,7 @@ export default ListKegiatan
 //     link: "/news-page-3",
 //   },
 //   {
-//     id: 4,
+//     id: 3,
 //     date: "17 Agustus 2024",
 //     category: "Kegiatan",
 //     location: "Sekolah Dasar Alam Bukit Akasia",
@@ -134,7 +136,7 @@ export default ListKegiatan
 //     link: "/news-page-3",
 //   },
 //   {
-//     id: 5,
+//     id: 7,
 //     date: "27 September 2024",
 //     category: "Kegiatan",
 //     location: "Sekolah Dasar Alam Bukit Akasia",
@@ -168,7 +170,7 @@ export default ListKegiatan
 //     link: "/news-page-3",
 //   },
 //   {
-//     id: 6,
+//     id: 4,
 //     date: "24 September 2024",
 //     category: "Kegiatan",
 //     location: "Sekolah Dasar Alam Bukit Akasia",
@@ -188,7 +190,7 @@ export default ListKegiatan
 //     link: "/news-page-3",
 //   },
 //   {
-//     id: 7,
+//     id: 5,
 //     date: "25 September 2024",
 //     category: "Kegiatan",
 //     location: "Sekolah Dasar Alam Bukit Akasia",
@@ -206,38 +208,4 @@ export default ListKegiatan
 //     imgSrc: clubTaekwondoSep,
 //     link: "/news-page-3",
 //   },
-//   //   {
-//   //     id: 3,
-//   //     date: "27 September 2024",
-//   //     category: "Kegiatan",
-//   //     location: "Sekolah Dasar Alam Bukit Akasia",
-//   //     title: `Klub Menggambar SD Alam Bukit Akasia Terniat Sejak Goresan Awal`,
-//   //     shortDesc:
-//   //       "Menggambar tidak sekadar membuat coretan. Dalam setiap goresan ada ide yang coba disampaikan oleh sang seniman. Di Sekolah Dasar Alam (SDA) Bukit Akasia Sumedang",
-//   //     longDesc: `
-//   //   BUKIT AKASIA–Menggambar tidak sekadar membuat coretan. Dalam setiap goresan ada ide yang coba disampaikan oleh sang seniman. Di Sekolah Dasar Alam (SDA) Bukit Akasia Sumedang, menggambar tidak sebatas penyaluran hobi peserta didik, namun juga bagian dari literasi menyampaikan ide melalui visual.
-
-//   // “Aku senang sekali bisa sekolah di Bukit Akasia karena di sini ada klub menggambarnya. Jadi Arsen bisa menggambar dan mewarnai apa saja yang Arsen mau,” kata Arsenio, peserta didik kelas III asal Ujungberung, Bandung.
-
-//   // Sekolah Dasar Alam (SDA) Bukit Akasia adalah salah satu sekolah dasar yang memiliki konsep pembelajaran yang berbeda dengan sekolah dasar lainnya. Konsep dasarnya setiap peserta didik itu unik dengan karakternya yang masing-masing yang berbeda, serta memiliki kebutuhan belajar yang berbeda antara peserta didik yang satu dengan yang lainnya.
-
-//   // SDA Bukit Akasia, selalu berupaya memaksimalkan seluruh potensi baik akademik maupun non-akademik dengan tujuan agar mampu menggali kecerdasan majemuk setiap peserta didik, agar peserta didik mampu tumbuh berkembang sesuai dengan kecerdasan masing-masing sesuai minatnya, hobi, karakter, dan bakat yang mereka miliki. Dalam membantu peserta didik dalam mencapai potensi dan kreativitas dalam bidang non-akademik. SDA Bukit Akasia, memberikan wadah berupa program khusus Klub Menggambar.
-
-//   // Klub Menggambar SDA Bukit Akasia ini adalah tempat peserta didik-peserta didik dapat memulai perjalanan seninya dengan gambar pertama yang indah. Ini semacam kegiatan di lingkungan sekolah yang dilaksanakan peserta didikan ketika selesainya kegiatan belajar mengajar (KBM) yang difasilitasi oleh sekolah. Klub Menggambar berupa sebuah forum yang dirancang untuk mendorong imajinasi dan kreativitas peserta didik melalui seni menggambar.
-
-//   // Klub menggambar SDA Bukit Akasia menekankan pada proses imajinasi dan ekspresi melalui goresan pertama yang indah, bukan sekedar hasil akhir.
-
-//   // “Alhamdulillah saya juga merasa senang dan sangat antusias dengan hadirnya klub menggambar di SD Alam Bukit akasia, karena anak saya suka mengekspresikan apa pun lewat gambar jadi saya merasa dengan adanya klub gambar ini dia mempunyai tempat untuk menyalurkan hobi dan bakat nya.” kata Ibunda Arsenio.
-
-//   // Di Klub Menggambar peserta didik peserta didik bisa mengekspresikan perasaan melalui gambar ataupun warna-warna sehingga bisa menjadi suatu karya natural dari goresan tangan mereka sendiri. Mengembangkan imajinasi sejak dini di Klub Menggambar SDA Bukit Akasia ditujukan untuk peserta didik dalam berbagai jenjang tingkatan dari mulai kelas I hingga kelas IV dengan harapan dapat menjadi media dalam mengungkapkan ide dan perasaannya dalam bentuk visual. Di SDA Bukit Akasia, angkatan peserta didik memang baru sampai kelas IV.
-//   //  Klub Menggambar dilaksanakan peserta didik setiap hari Rabu dan Kamis pukul 15.00 hingga selesai dibimbing illustrator profesional yang akrab dipanggil Kang Oby.
-//   // Pada awal kegiatan Klub menggambar selalu diawali dengan pemanasan imajinasi. Pendekatan ini tidak hanya mengembangkan imajinasi siswa, tetapi juga memperkuat keterampilan observasi dan pemahaman mereka terhadap dunia sekitar. Selain mengembangkan imajinasi, menggambar juga memiliki banyak manfaat lain, termasuk dalam hal pengembangan keterampilan motorik halus. Menggerakkan tangan untuk menggoreskan pensil atau kuas membantu siswa melatih koordinasi tangan dan mata mereka.
-//   // “Kegiatan untuk peserta didik setelah pemanasan imajinasi dilanjutkan dengan mempelajari berbagai teknik menggambar, dimulai dengan teknik menggambar, seperti membuat garis vertikal, horizontal, dan diagonal. Kemudian mulailah membuat bentuk, membuat segitiga, persegi, dari membuat bentuk kecil hingga bentuk besar,” kata Kang Oby.
-//   // Pada kegiatan Klub Menggambar, peserta didik diajak untuk mencoba berbagai teknik, mulai dari menggambar dengan pensil hingga menggunakan media cat air, krayon, dan spidol. Setiap sapuan pensil warna, setiap sapuan kuas, dan penggunaan bahan seni yang berbeda melatih koordinasi tangan-mata peserta didik. Kegiatan ini juga memberikan kesempatan kepada peserta didik untuk meningkatkan keterampilan dengan penuh semangat dan percaya diri. Interaksi antar peserta didik juga sangat penting dalam klub ini. Hal ini untuk membangun rasa empati dan kolaborasi dalam lingkungan kreatif.
-//   // Klub ini menjadi tempat peserta didik memulai perjalanan seninya dengan gambar pertama yang indah.  Salah satu tujuan utama dari  Klub Menggambar di SDA Bukit Akasia adalah membantu pembentukan karakter peserta didik. Teknisnya dengan memberikan ruang bebas untuk berekspresi. Klub ini membantu peserta didik-peserta didik memahami bahwa setiap karya seni adalah cerminan dari diri mereka, dan tidak ada karya yang benar atau salah. Semua karya dihargai sebagai bentuk ekspresi pribadi yang unik.
-//   // Klub Menggambar SDA Bukit Akasia bukan hanya sekadar tempat belajar menggambar, tetapi menjadi ruang bagi peserta didik-peserta didik untuk berimajinasi, berekspresi, dan mengasah keterampilan mereka.  Setiap goresan awal yang mereka buat adalah langkah kecil menuju pencapaian yang lebih besar, menciptakan karya-karya yang indah dan penuh makna. Melalui Club Menggambar, Sekolah Dasar Alam (SDA) Bukit Akasia terus berkomitmen untuk mendukung perkembangan kreatif peserta didik yang penuh potensi. (Rizka Rahmah Zakiyah dan Neni Febriyani)
-//   //     `,
-//   //     imgSrc: clubMenggambarSep,
-//   //     link: "/news-page-4",
-//   //   },
 // ];
