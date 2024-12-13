@@ -15,9 +15,6 @@ const DetailBeritaPage = () => {
     const beritaList = ListBerita()
     const berita = beritaList.find(item => item.id === id);
 
-    console.log("ini id nya bro: ", id, "ini kegiatan listnya: ", beritaList, 'dan ini kegiatan yang mau di render: ', berita)
-
-
     if (!berita) {
         return <div className='font-semibold text-orange text-center'>Berita not found.</div>;
     }

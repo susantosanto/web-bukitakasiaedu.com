@@ -16,8 +16,6 @@ const ListBerita = () => {
       const q = query(collection(db, "articles"), where("category", "==", "Berita"));
       const querySnapshot = await getDocs(q);
 
-      console.log("key: ", q, "querySnapshot: ", querySnapshot)
-
       querySnapshot.forEach((doc) => {
         arraylist.push({
           id: doc.id,
@@ -30,7 +28,6 @@ const ListBerita = () => {
 
     fetchData();
   }, []);
-  console.log("apa nihh bro: ", beritaList)
   return beritaList;
 };
 
@@ -98,27 +95,27 @@ Kegiatan-kegiatan ini merupakan bagian penting dari pengalaman belajar di SD Ala
     imgSrc: penerbitanbuku,
     link: "/news-page-4",
   },
-    {
-      id: 4,
-      date: "19 September 2024",
-      category: "Berita",
-      location: "Sekolah Dasar Alam Bukit Akasia",
-      title: `“Doraemon” Mendongeng di Bukit Akasia: Peringati Maulid Nabi saw., Bukit Akasia Hadirkan Kak Bimo`,
-      shortDesc:
-        "Gelak tawa ratusan anak meriuhkan Aula Bukit Akasia, Sumedang, Jawa Barat. Para santri Madrasah Al Istiqomah antusias menyimak cerita yang dikisahkan pendongeng nasional asal Daerah Istimewa Yogyakarta (DIY), Bambang Bimo Suryono alias Kak Bimo...",
-      longDesc: `BUKIT AKASIA– Gelak tawa ratusan anak meriuhkan Aula Bukit Akasia, Sumedang, Jawa Barat. Para santri Madrasah Al Istiqomah antusias menyimak cerita yang dikisahkan pendongeng nasional asal Daerah Istimewa Yogyakarta (DIY), Bambang Bimo Suryono alias Kak Bimo.
-  “Saatnya mendengarkan cerita,” kata Kak Bimo dengan suara yang sangat mirip dengan tokoh kartun Jepang populer, Doraemon. Anak-anak histeris saking antusiasnya. Sebagian tertawa lepas, sebagian lagi berjingkrak kegirangan.
-  Kak Bimo menceritakan kisah kelahiran, masa kecil Nabi Muhammad saw. dan para nabi yang lain dengan sangat menarik. Cerita kelahiran Sang Nabi pada waktu pasukan gajah Raja Abrahah menyerang Kota Mekkah, Kak Bimo sampaikan dengan seru. Tokoh-tokoh yang muncul dalam cerita Kak Bimo beberapa disuarakan seperti karakter-karakter yang sangat akrab dengan dunia anak-anak. Anak-anak dimanjakan dengan suara Donald Bebek, Spongebob, Patrick Si Bintang laut dan lain-lain.
-  Tidak hanya tentang Nabi Muhammad saw., Kak Bimo juga menyampaikan kisah kelahiran Nabi Isa as., dan mukjizatnya ketika berbicara sewaktu bayi di hadapan para tokoh agama Yahudi di Palestina.
-  Anak-anak yang mengenakan berbagai kostum penampilan panggung mengikuti cerita Kak Bimo sampai akhir dengan penuh semangat. Selain menyimak cerita Kak Bimo, anak-anak itu juga menampilkan berbagai lagu puji-pujian kepada Nabi Muhammad saw.
-  	Kak Bimo pun mengakhiri penampilan serunya dengan mengajak seluruh audiens untuk bersalawat bersama-sama. Para guru madrasah Al Istiqomah, perwakilan Yayasan Bukit Akasia dan Yayasan Al Istiqomah, para peserta didik, dan orangtua murid ikut serta bersalawat dengan khidmat. Kak Bimo sendiri adalah pendongeng nasional asal Yogyakarta. Ia  sudah mendongeng di pelosok Indonesia selama puluhan tahun. Kak Bimo mencatat dua rekor Museum Rekor Indonesia (MURI) untuk kategori ilustrasi suara terbanyak dan mendongeng dengan penonton terbanyak.
-  Peringatan Maulid Nabi Muhammad SAW 1446 H/2024 di MDTA AL-Istiqomah, Bukit Akasia menjadi tidak hanya penuh makna tetapi juga menggembirakan. Maimunah, Kepala Sekolah MDTA Al-Istiqomah, mengungkapkan, peringatan tahun ini dilaksanakan secara berbeda agar semangat cinta kepada Nabi Muhammad saw. semakin membumi.
-  “Harapan kami, anak-anak mengenal dan mencintai Rasulullah dengan penuh kegembiraan. Itulah mengapa kami menghadirkan Kak Bimo dalam kesempatan kali ini,” ujar ibu guru yang akrab dipanggil Bu Atim ini.
-  Bu Atim menambahkan, setiap tahun peringatan maulid Nabi Muhammad saw. selalu dilaksanakan di MDT Al Istiqomah, Bukit Akasia. Berbagai penampilan para santri MDT Al Istiqomah yang berasal dari PAUD Kamboe Akasia, SDA Bukit Akasia dan berbagai sekolah tampil membawakan lagu keagamaan, shalawat, dan berbagai penampilan lainnya. (Reda/Indra)
-  `,
-      imgSrc: kakBimo,
-      link: "/news-page-5",
-    },
+  //   {
+  //     id: 4,
+  //     date: "19 September 2024",
+  //     category: "Berita",
+  //     location: "Sekolah Dasar Alam Bukit Akasia",
+  //     title: `“Doraemon” Mendongeng di Bukit Akasia: Peringati Maulid Nabi saw., Bukit Akasia Hadirkan Kak Bimo`,
+  //     shortDesc:
+  //       "Gelak tawa ratusan anak meriuhkan Aula Bukit Akasia, Sumedang, Jawa Barat. Para santri Madrasah Al Istiqomah antusias menyimak cerita yang dikisahkan pendongeng nasional asal Daerah Istimewa Yogyakarta (DIY), Bambang Bimo Suryono alias Kak Bimo...",
+  //     longDesc: `BUKIT AKASIA– Gelak tawa ratusan anak meriuhkan Aula Bukit Akasia, Sumedang, Jawa Barat. Para santri Madrasah Al Istiqomah antusias menyimak cerita yang dikisahkan pendongeng nasional asal Daerah Istimewa Yogyakarta (DIY), Bambang Bimo Suryono alias Kak Bimo.
+  // “Saatnya mendengarkan cerita,” kata Kak Bimo dengan suara yang sangat mirip dengan tokoh kartun Jepang populer, Doraemon. Anak-anak histeris saking antusiasnya. Sebagian tertawa lepas, sebagian lagi berjingkrak kegirangan.
+  // Kak Bimo menceritakan kisah kelahiran, masa kecil Nabi Muhammad saw. dan para nabi yang lain dengan sangat menarik. Cerita kelahiran Sang Nabi pada waktu pasukan gajah Raja Abrahah menyerang Kota Mekkah, Kak Bimo sampaikan dengan seru. Tokoh-tokoh yang muncul dalam cerita Kak Bimo beberapa disuarakan seperti karakter-karakter yang sangat akrab dengan dunia anak-anak. Anak-anak dimanjakan dengan suara Donald Bebek, Spongebob, Patrick Si Bintang laut dan lain-lain.
+  // Tidak hanya tentang Nabi Muhammad saw., Kak Bimo juga menyampaikan kisah kelahiran Nabi Isa as., dan mukjizatnya ketika berbicara sewaktu bayi di hadapan para tokoh agama Yahudi di Palestina.
+  // Anak-anak yang mengenakan berbagai kostum penampilan panggung mengikuti cerita Kak Bimo sampai akhir dengan penuh semangat. Selain menyimak cerita Kak Bimo, anak-anak itu juga menampilkan berbagai lagu puji-pujian kepada Nabi Muhammad saw.
+  // 	Kak Bimo pun mengakhiri penampilan serunya dengan mengajak seluruh audiens untuk bersalawat bersama-sama. Para guru madrasah Al Istiqomah, perwakilan Yayasan Bukit Akasia dan Yayasan Al Istiqomah, para peserta didik, dan orangtua murid ikut serta bersalawat dengan khidmat. Kak Bimo sendiri adalah pendongeng nasional asal Yogyakarta. Ia  sudah mendongeng di pelosok Indonesia selama puluhan tahun. Kak Bimo mencatat dua rekor Museum Rekor Indonesia (MURI) untuk kategori ilustrasi suara terbanyak dan mendongeng dengan penonton terbanyak.
+  // Peringatan Maulid Nabi Muhammad SAW 1446 H/2024 di MDTA AL-Istiqomah, Bukit Akasia menjadi tidak hanya penuh makna tetapi juga menggembirakan. Maimunah, Kepala Sekolah MDTA Al-Istiqomah, mengungkapkan, peringatan tahun ini dilaksanakan secara berbeda agar semangat cinta kepada Nabi Muhammad saw. semakin membumi.
+  // “Harapan kami, anak-anak mengenal dan mencintai Rasulullah dengan penuh kegembiraan. Itulah mengapa kami menghadirkan Kak Bimo dalam kesempatan kali ini,” ujar ibu guru yang akrab dipanggil Bu Atim ini.
+  // Bu Atim menambahkan, setiap tahun peringatan maulid Nabi Muhammad saw. selalu dilaksanakan di MDT Al Istiqomah, Bukit Akasia. Berbagai penampilan para santri MDT Al Istiqomah yang berasal dari PAUD Kamboe Akasia, SDA Bukit Akasia dan berbagai sekolah tampil membawakan lagu keagamaan, shalawat, dan berbagai penampilan lainnya. (Reda/Indra)
+  // `,
+  //     imgSrc: kakBimo,
+  //     link: "/news-page-5",
+  //   },
   {
     id: 5,
     date: "September 2024",

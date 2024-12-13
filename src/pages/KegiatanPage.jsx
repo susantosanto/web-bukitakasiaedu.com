@@ -7,18 +7,16 @@ import Header from "../component/Header";
 import 'lazysizes';
 import { HashLink } from "react-router-hash-link";
 import ScroolToTop from "../component/ScroolToTop";
-import ListKegiatan from "../data/ListKegiatan";  // Pastikan sesuai dengan cara ekspor
+import ListKegiatan from "../data/ListKegiatan"; 
 
 const KegiatanPage = () => {
-    const kegiatanList = ListKegiatan();  // Memanggil fungsi ListKegiatan untuk mendapatkan data
-    console.log("KEGIATAN list: ", kegiatanList)
+    const kegiatanList = ListKegiatan();  
     if (kegiatanList.length === 0) {
         return <div>No kegiatan available.</div>;
     }
 
     const headerKegiatan = kegiatanList[kegiatanList.length - 1];
     const remainingKegiatan = kegiatanList.slice(0, -1);
-    console.log("ini kegiatan list: ", kegiatanList, "ini header kegiatan: ", headerKegiatan, "remaining kegiatan: ", remainingKegiatan)
 
     return (
         <div className="w-full">

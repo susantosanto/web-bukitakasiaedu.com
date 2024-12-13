@@ -22,8 +22,6 @@ export default function AddArticle() {
     quote: "",
   });
 
-  console.log("data article nihh bro: ", articleData)
-
   const handleCodeChange = (e) => {
     setInputCode(e.target.value);
   };
@@ -95,8 +93,6 @@ export default function AddArticle() {
   
       if (!res) return alert("Gagal mengupload artikel");
   
-      console.log("Data artikel yang di-upload ke database: ", res);
-  
       alert("Artikel berhasil diunggah!");
   
       navigate("/#dashboard");
@@ -115,7 +111,6 @@ export default function AddArticle() {
         publishedBy: '',
       });
     } catch (error) {
-      console.log("Errornya: ", error);
       alert("Terjadi kesalahan saat mengunggah artikel.");
     } finally {
       setIsLoading(false);

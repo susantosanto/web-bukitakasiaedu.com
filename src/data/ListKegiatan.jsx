@@ -30,7 +30,6 @@ const ListKegiatan = () => {
 
     fetchData();
   }, []);
-  // console.log("kegieatan list: ", kegiatanList)
   return kegiatanList;
 };
 
