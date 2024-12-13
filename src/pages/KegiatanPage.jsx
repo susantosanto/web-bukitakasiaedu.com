@@ -1,5 +1,3 @@
-// KegiatanPage.jsx
-
 import NavbarSecondary from "../component/NavbarSecondary";
 import Footer from "../component/Footer";
 import bannerTentang from '../assets/tentang-page/hasilbelajar.webp';

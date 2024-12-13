@@ -14,8 +14,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import AddArticle from "./component/AddArticle";
 
-
-
 const App = () => {
   return (
     <BrowserRouter>
@@ -29,9 +27,9 @@ const App = () => {
         <Route path="/fasilitas" element={<FasilitasPage />} />
         <Route path="/hubungikami" element={<HubungiKamiPage />} />
         <Route path="/search" element={<SearchResultsPage />} />
+        <Route path="/Add-Article" element={<AddArticle />} />
         {/* <Route path="*" element={<NotFoundPage />} /> */}
         <Route path="*" element={<MaintenancePage />} />
-        <Route path="/Add-Article" element={<AddArticle />} />
       </Routes>
     </BrowserRouter>
   );
