@@ -279,17 +279,17 @@ const Navbar = () => {
                   </form>
                 </div>
               </div>
-              <div className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 cursor-pointer hidden lg:block">
-                <a href="https://docs.google.com/forms/d/1v4jGEnYmL9QreaFEl6NktSdk3sxb2h91-WQF7Kb8TI8">
+              <div className="md:px-4 md:py-2 sm:px-2 sm:py-0.5 bg-green-700 text-white rounded hover:bg-green-800 cursor-pointer hidden lg:block">
+                <a className="md:text-base sm:text-xs" href="https://docs.google.com/forms/d/1v4jGEnYmL9QreaFEl6NktSdk3sxb2h91-WQF7Kb8TI8">
                   Daftar PPDB Disini
                 </a>
               </div>
             </nav>
             <div
-              className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 cursor-pointer block lg:hidden"
+              className="md:px-4 md:py-2 sm:px-2 sm:py-0.5 bg-green-700 text-white rounded hover:bg-green-800 cursor-pointer block lg:hidden"
               id="ppdb-hide"
             >
-              <a href="https://docs.google.com/forms/d/1v4jGEnYmL9QreaFEl6NktSdk3sxb2h91-WQF7Kb8TI8">
+              <a className="md:text-base sm:text-xs" href="https://docs.google.com/forms/d/1v4jGEnYmL9QreaFEl6NktSdk3sxb2h91-WQF7Kb8TI8">
                 Daftar PPDB Disini
               </a>
             </div>
