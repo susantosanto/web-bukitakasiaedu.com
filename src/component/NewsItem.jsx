@@ -27,8 +27,7 @@ const NewsItem = ({ id, date, category, file, title }) => {
   const { day, month, year } = formatDate(date);
 
   const handleClick = () => {
-    console.log(category)
-    navigate(`/${category === "Berita" ? "Berita" : "kegiatan"}/${id}`);
+    navigate(`/${category.toLowerCase() === "berita" ? "berita" : "kegiatan"}/${id}`);
   };
 
   return (
