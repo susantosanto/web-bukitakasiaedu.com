@@ -28,7 +28,7 @@ const NewsItem = ({ id, date, category, file, title }) => {
 
   const handleClick = () => {
     console.log(category)
-    navigate(`/${category === "Berita" ? "berita" : "kegiatan"}/${id}`);
+    navigate(`/${category === "Berita" ? "Berita" : "kegiatan"}/${id}`);
   };
 
   return (
