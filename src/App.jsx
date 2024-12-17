@@ -19,6 +19,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/Add-Article" element={<AddArticle />} />
         <Route path="/tentang" element={<TentangPage />} />
         <Route path="/berita" element={<BeritaPage />} />
         <Route path="/berita/:id" element={<DetailBeritaPage />} />
@@ -27,7 +28,6 @@ const App = () => {
         <Route path="/fasilitas" element={<FasilitasPage />} />
         <Route path="/hubungikami" element={<HubungiKamiPage />} />
         <Route path="/search" element={<SearchResultsPage />} />
-        <Route path="/Add-Article" element={<AddArticle />} />
         {/* <Route path="*" element={<NotFoundPage />} /> */}
         <Route path="*" element={<MaintenancePage />} />
       </Routes>
