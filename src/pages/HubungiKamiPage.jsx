@@ -37,10 +37,10 @@ const HubungiKamiPage = () => {
                     <div className="bg-white shadow-lg rounded-lg p-6 md:p-8 flex flex-col justify-center items-center">
                         <h5 className="text-2xl md:text-3xl font-bold mb-5 text-primary text-center">Follow Us</h5>
                         <div className="flex space-x-4 md:space-x-6">
-                            <a href="mailto:info@example.com" className="text-primary hover:text-secondary transition-colors duration-200">
+                            <a href="mailto:bukitakasiaoffice@gmail.com" className="text-primary hover:text-secondary transition-colors duration-200">
                                 <FontAwesomeIcon icon={faEnvelope} size="2x" />
                             </a>
-                            <a href="tel:1234567890" className="text-primary hover:text-secondary transition-colors duration-200">
+                            <a href="https://wa.me/6282126016965" className="text-primary hover:text-secondary transition-colors duration-200">
                                 <FontAwesomeIcon icon={faPhone} size="2x" />
                             </a>
                             <a href="https://web.facebook.com/p/Sekolah-Alam-Bukit-Akasia-100078924381045/" className="text-primary hover:text-secondary transition-colors duration-200">

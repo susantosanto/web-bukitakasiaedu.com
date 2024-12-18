@@ -127,9 +127,6 @@ const Footer = () => {
               reserved.
             </p>
           </div>
-          <div className="text-center md:text-right">
-            <a href="/Add-Article">Add Artikel</a>
-          </div>
 
         </div>
       </div>
