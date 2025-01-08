@@ -76,25 +76,32 @@ const Navbar = () => {
 
   return (
     <div
-      className={`z-10 top-0 bg-transparent transition-all duration-300 w-full ${
+      className={`z-10 top-0 bg-transparent transition-all duration-300 ${
         isScrolled ? "fixed" : "sticky"
       }`}
     >
       <div
         className={`${isScrolled ? "bg-slate-100 hidden lg:flex" : "hidden"}`}
       >
-        <div className="w-9/12 mx-auto h-12 flex items-center justify-between" id="location">
-  {isScrolled && (
-    <div className="basis-1/2 hidden lg:flex items-center overflow-x-hidden max-w-full w-4/12">
-      <a href="https://maps.app.goo.gl/cSmCUJzwYKUscCnTA" className="whitespace-nowrap animate-marquee">
-        <p className="font-light mb-2 flex items-center text-xs sm:text-sm">
-          <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
-          Kawasan Bukit Akasia Komplek Panorama Jatinangor, Cinanjung Tanjungari - Sumedang
-        </p>
-      </a>
-    </div>
+        <div
+          className="w-full lg:w-9/12 mx-auto h-12 flex items-center justify-between"
+          id="location"
+        >
+          {isScrolled && (
+            <div className="basis-1/2 hidden lg:flex items-center overflow-x-hidden max-w-full w-4/12">
+              <a
+                href="https://maps.app.goo.gl/cSmCUJzwYKUscCnTA"
+                className="whitespace-nowrap animate-marquee"
+              >
+                <p className="font-light mb-2 flex items-center text-xs sm:text-sm">
+                  <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
+                  Kawasan Bukit Akasia Komplek Panorama Jatinangor, Cinanjung
+                  Tanjungari - Sumedang
+                </p>
+              </a>
+            </div>
           )}
-          <div className="basis-1/2 flex justify-center items-center space-x-2 sm:space-x-4 text-xs sm:text-sm w-8/12">
+          <div className="basis-1/2 flex justify-end items-center space-x-2 sm:space-x-4 text-xs sm:text-sm w-8/12">
             <h1 className="flex items-center">
               <FontAwesomeIcon icon={faPhone} className="mr-2 text-primary" />
               <span className="">
@@ -125,10 +132,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div
-        className={`py-1 ${isScrolled ? "bg-primary" : "bg-transparent mt-10"}`}
-      >
-        <div className="w-10/12 mx-auto h-12 flex items-center">
+      <div className={`py-1 ${isScrolled ? "bg-primary" : "bg-transparent"}`}>
+        <div className="lg:w-12/12 w-full mx-auto h-12 flex items-center">
           <div
             className={`w-3/12 flex items-center mx-auto transition-all duration-300 ${
               isScrolled ? "mt-0" : "mt-14"
@@ -140,21 +145,21 @@ const Navbar = () => {
               }`}
             >
               <a href="/" className="w-auto h-auto">
-              <img
-                src={logo}
-                alt="logo"
-                className={`${isScrolled ? "w-12 h-12" : "w-22 h-18 mt-3"}`}
-              />
+                <img
+                  src={logo}
+                  alt="logo"
+                  className={`${isScrolled ? "w-12 h-12" : "w-22 h-18 mt-3"}`}
+                />
               </a>
             </div>
           </div>
-          <div className="w-full flex justify-between">
-            <nav className="w-full justify-between text-slate-300 items-center hidden lg:flex">
+          <div className="w-9/12 flex justify-between w-full">
+            <nav className="w-full hidden lg:flex justify-between px-6 text-slate-300 items-center">
               <div>
                 <HashLink
                   smooth
                   to="/#beranda"
-                  className={`group-hover:text-white py-2 ${
+                  className={`group-hover:text-white py-8 ${
                     isActive("#beranda") ? "text-white" : "text-slate-100"
                   }`}
                 >
@@ -279,17 +284,17 @@ const Navbar = () => {
                   </form>
                 </div>
               </div>
-              <div className="md:px-4 md:py-2 sm:px-2 sm:py-0.5 bg-green-700 text-white rounded hover:bg-green-800 cursor-pointer hidden lg:block">
-                <a className="md:text-base sm:text-xs" href="https://docs.google.com/forms/d/1v4jGEnYmL9QreaFEl6NktSdk3sxb2h91-WQF7Kb8TI8">
+              <div className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 cursor-pointer hidden lg:block text-sm">
+                <a href="https://docs.google.com/forms/d/1v4jGEnYmL9QreaFEl6NktSdk3sxb2h91-WQF7Kb8TI8">
                   Daftar PPDB Disini
                 </a>
               </div>
             </nav>
             <div
-              className="md:px-4 md:py-2 sm:px-2 sm:py-0.5 bg-green-700 text-white rounded hover:bg-green-800 cursor-pointer block lg:hidden"
+              className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 cursor-pointer block lg:hidden text-sm  "
               id="ppdb-hide"
             >
-              <a className="md:text-base sm:text-xs" href="https://docs.google.com/forms/d/1v4jGEnYmL9QreaFEl6NktSdk3sxb2h91-WQF7Kb8TI8">
+              <a href="https://docs.google.com/forms/d/1v4jGEnYmL9QreaFEl6NktSdk3sxb2h91-WQF7Kb8TI8">
                 Daftar PPDB Disini
               </a>
             </div>
