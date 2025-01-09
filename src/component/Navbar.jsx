@@ -76,7 +76,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`z-10 top-0 bg-transparent transition-all duration-300 ${
+      className={`z-10 top-0 bg-transparent transition-all duration-300 w-full ${
         isScrolled ? "fixed" : "sticky"
       }`}
     >
