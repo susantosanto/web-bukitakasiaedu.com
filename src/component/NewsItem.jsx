@@ -9,17 +9,15 @@ const NewsItem = ({ id, date, category, file, title }) => {
   const formatDate = (dateStr) => {
     if (!dateStr) return { day: "", month: "", year: "" };
 
-    // Periksa apakah dateStr adalah objek Timestamp
     if (dateStr instanceof Timestamp) {
       const date = dateStr.toDate();
-      dateStr = date.toLocaleDateString('id-ID', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
+      dateStr = date.toLocaleDateString("id-ID", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
       });
     }
 
-    // Memisahkan tanggal
     const [day, month, year] = dateStr.split(" ");
     return { day, month, year };
   };
@@ -27,7 +25,9 @@ const NewsItem = ({ id, date, category, file, title }) => {
   const { day, month, year } = formatDate(date);
 
   const handleClick = () => {
-    navigate(`/${category.toLowerCase() === "berita" ? "berita" : "kegiatan"}/${id}`);
+    navigate(
+      `/${category.toLowerCase() === "berita" ? "berita" : "kegiatan"}/${id}`
+    );
   };
 
   return (
@@ -63,11 +63,7 @@ const NewsItem = ({ id, date, category, file, title }) => {
 
       {/* Mobile and Tablet View */}
       <div className="md:hidden bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl mb-8">
-        <img
-          src={file}
-          alt=""
-          className="w-full h-48 object-cover lazyload"
-        />
+        <img src={file} alt="" className="w-full h-48 object-cover lazyload" />
         <div className="p-6">
           <div className="flex justify-between items-center mb-4">
             <div className="flex">

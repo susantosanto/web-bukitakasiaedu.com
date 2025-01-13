@@ -3,7 +3,9 @@ import {
   faCalendarAlt,
   faLeftLong,
   faMapMarkerAlt,
+  faPen,
   faTag,
+  faUserAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { HashLink } from "react-router-hash-link";
 
@@ -15,6 +17,8 @@ export default function DetailNews(props) {
     newsLocation,
     newsLongDesc,
     newsTitle,
+    linkDocumentation,
+    publishedBy,
   } = props;
 
   return (
@@ -48,6 +52,14 @@ export default function DetailNews(props) {
               />
               <span>{newsLocation}</span>
             </div>
+            {/* edit start here */}
+
+            <div className="flex items-center space-x-2">
+              <FontAwesomeIcon icon={faPen} className="text-orange-500" />
+              <span>{publishedBy}</span>
+            </div>
+
+            {/* edit end here */}
           </div>
           <p className="text-gray-700 leading-relaxed mb-6 whitespace-pre-line text-justify">
             {newsLongDesc}
@@ -60,11 +72,16 @@ export default function DetailNews(props) {
           </p>
           <div className="mt-10 flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-4">
-              {/* <img src="/path/to/author/image.jpg" alt="Author" className="w-12 h-12 rounded-full object-cover" />
-                                <div>
-                                    <p className="text-sm text-gray-700 font-semibold">Written by John Doe</p>
-                                    <p className="text-sm text-gray-500">Journalist at SD Alam Bukit Akasia</p>
-                                </div> */}
+              {/* {linkDocumentation ? (
+              ) : (
+                ""
+              )} */}
+              <a
+                href={linkDocumentation}
+                className="px-2 py-1 bg-green-500 hover:bg-green-700 text-white rounded"
+              >
+                <p>Link Documentation: {linkDocumentation}</p>
+              </a>
             </div>
             <div className="text-sm text-gray-500">Published on {newsDate}</div>
           </div>

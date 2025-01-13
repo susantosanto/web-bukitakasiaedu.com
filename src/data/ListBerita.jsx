@@ -13,7 +13,10 @@ const ListBerita = () => {
   useEffect(() => {
     const fetchData = async () => {
       const arraylist = [];
-      const q = query(collection(db, "articles"), where("category", "==", "Berita"));
+      const q = query(
+        collection(db, "articles"),
+        where("category", "==", "Berita")
+      );
       const querySnapshot = await getDocs(q);
 
       querySnapshot.forEach((doc) => {
@@ -33,9 +36,8 @@ const ListBerita = () => {
 
 export default ListBerita;
 
-
 const apaja = [
-    {
+  {
     id: 1,
     date: "12 Maret 2024",
     category: "Berita",
@@ -202,5 +204,3 @@ Berdasarkan hasil suara yang diperoleh, Evip Sopia, S.Ag., M.M. memperoleh suara
   //   link: "/news-page-3",
   // },
 ];
-
-

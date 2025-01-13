@@ -35,16 +35,22 @@ const Footer = () => {
               (+62) 821-2601-6965
             </p>
           </div>
-          <div className="hidden lg:block">
+          <div className="block">
             <h5 className="text-lg font-bold mb-5">Quick Links</h5>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-gray-300">
+                <a
+                  href="http://localhost:5173/tentang#tentangSekolah"
+                  className="hover:text-gray-300"
+                >
                   Tetang Kami
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-300">
+                <a
+                  href="http://localhost:5173/tentang#kurikulum"
+                  className="hover:text-gray-300"
+                >
                   Akademik
                 </a>
               </li>
@@ -59,13 +65,16 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-300">
+                <a
+                  href="https://wa.me/+6282126016965"
+                  className="hover:text-gray-300"
+                >
                   Kontak
                 </a>
               </li>
             </ul>
           </div>
-          <div className="hidden lg:block">
+          <div className="block">
             <h5 className="text-lg font-bold mb-5">Newsletter</h5>
             <p className="font-light mb-4">
               Subscribe to our newsletter for the latest updates.
@@ -127,7 +136,6 @@ const Footer = () => {
               reserved.
             </p>
           </div>
-
         </div>
       </div>
     </footer>
